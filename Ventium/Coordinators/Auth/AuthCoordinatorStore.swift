@@ -8,6 +8,7 @@
 import Foundation
 import UI
 
+@MainActor
 @Observable
 final class AuthCoordinatorStore {
     let loginViewStore: LoginViewStore
@@ -16,5 +17,13 @@ final class AuthCoordinatorStore {
     
     init(loginViewStore: LoginViewStore) {
         self.loginViewStore = loginViewStore
+        
+        bind()
+    }
+    
+    private func bind() {
+        loginViewStore.onLogoutButtonTapped = { [weak self] in
+            self?.onLogout?()
+        }
     }
 }

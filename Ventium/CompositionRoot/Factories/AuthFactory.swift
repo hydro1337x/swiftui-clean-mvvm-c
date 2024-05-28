@@ -10,6 +10,7 @@ import UI
 import Domain
 import Core
 
+@MainActor
 struct AuthFactory {
     func makeLoginScene() -> LoginViewStore {
         return LoginViewStore()

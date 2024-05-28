@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 @Observable
 public final class LoginViewStore {
     private(set) var isDisabled: Bool = true
