@@ -1,0 +1,40 @@
+{
+    "schemaName" : "Graph",
+    "input" : {
+        "operationSearchPaths" : [
+            "**/*.graphql"
+        ],
+        "schemaSearchPaths" : [
+            "**/*.graphqls"
+        ]
+    },
+    "output": {
+        "schemaTypes": {
+            "moduleType": {
+                "other": {}
+            },
+            "path": "./Graph/"
+        },
+        "testMocks": {
+            "none": {}
+        },
+        "operations": {
+            "inSchemaModule": {}
+        }
+    },
+    "schemaDownloadConfiguration": {
+        "downloadMethod": {
+            "introspection": {
+                "endpointURL": "https://ventium-7lx4w6qtva-ew.a.run.app/graphql",
+                "httpMethod": {
+                    "POST": {}
+                },
+                "includeDeprecatedInputValues": false,
+                "outputFormat": "SDL"
+            }
+        },
+        "downloadTimeout": 60,
+        "headers": [],
+        "outputPath": "./Graph/Resources/schema.graphqls"
+    }
+}

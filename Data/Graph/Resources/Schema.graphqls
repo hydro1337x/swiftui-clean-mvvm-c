@@ -1,0 +1,434 @@
+"""
+A directive used by the Apollo iOS client to annotate operations or fragments that should be used exclusively for generating local cache mutations instead of as standard operations.
+"""
+directive @apollo_client_ios_localCacheMutation on QUERY | MUTATION | SUBSCRIPTION | FRAGMENT_DEFINITION
+
+enum FilterOperator {
+  eq
+  lte
+  lt
+  gte
+  gt
+  exact_contains
+  loose_contains
+  between
+  isNull
+}
+
+enum LogicalOperator {
+  or
+  and
+}
+
+enum SortDirection {
+  asc
+  desc
+}
+
+enum SortNulls {
+  first
+  last
+}
+
+enum UserType {
+  business
+  regular
+  admin
+}
+
+enum TagType {
+  city
+  category
+}
+
+enum PostType {
+  event
+  story
+  post
+}
+
+enum UploadStatus {
+  initialized
+  finalized
+  error
+}
+
+scalar FilterValue
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+input FilterInput {
+  key: String!
+  operator: FilterOperator
+  value: FilterValue!
+  invert: Boolean
+  allowNull: Boolean
+}
+
+input ScopeInput {
+  operator: LogicalOperator
+  filters: [FilterInput!]
+  scopes: [ScopeInput!]
+}
+
+input SortInput {
+  key: String!
+  direction: SortDirection
+  nulls: SortNulls
+}
+
+input PaginationInput {
+  cursor: Int
+  limit: Int
+}
+
+input SearchInput {
+  term: String
+}
+
+input QueryInput {
+  scope: ScopeInput
+  filters: [FilterInput!]
+  sort: [SortInput!]
+  pagination: PaginationInput
+  search: SearchInput
+}
+
+type PaginationOutput {
+  total: Int!
+  cursor: Int!
+  has_next: Boolean!
+}
+
+type GenerateTokenOutput {
+  accessToken: String!
+  refreshToken: String!
+}
+
+input RegistrationInputType {
+  email: String!
+  password: String!
+  password_confirmed: String!
+}
+
+input ResetForgottenPasswordInputTypes {
+  token: String!
+  password: String!
+  password_confirmed: String!
+}
+
+input ResetLoggedUserPasswordInputTypes {
+  password: String!
+  password_confirmed: String!
+  old_password: String!
+}
+
+input LoginInputType {
+  email: String!
+  password: String!
+}
+
+type IdpUserType {
+  id: ID!
+  name: String
+  nick_name: String
+  avatar_url: String
+  status: String!
+}
+
+type MediaUploadInfo {
+  id: ID!
+  url: String
+}
+
+enum MediaFilterKey {
+  id
+  created_at
+  updated_at
+  display_name
+  mime
+  title
+  description
+  uploaded_by_id
+  location_id
+  post_id
+  user_id
+  is_favourite
+}
+
+input MediaInputType {
+  display_name: String!
+  mime: String!
+  title: String
+  description: String
+  meta: JSON
+  location_id: ID
+  post_id: ID
+  user_id: ID
+  is_favourite: Boolean!
+}
+
+type MediaOutputType {
+  id: ID!
+  created_at: String!
+  updated_at: String!
+  path: String!
+  display_name: String!
+  mime: String!
+  title: String
+  description: String
+  meta: JSON
+  uploaded_by_id: ID
+  location_id: ID
+  post_id: ID
+  user_id: ID
+  is_favourite: Boolean!
+  location(query: QueryInput): LocationOutputType
+  post(query: QueryInput): PostOutputType
+  user(query: QueryInput): UserOutputType
+}
+
+type PaginatedMediaOutputType {
+  pagination: PaginationOutput!
+  data: [MediaOutputType!]!
+}
+
+enum UserFilterKey {
+  id
+  created_at
+  updated_at
+  type
+}
+
+input UserInputType {
+  type: UserType!
+}
+
+type UserOutputType {
+  id: ID!
+  created_at: String!
+  updated_at: String!
+  type: UserType!
+  user_assignments(query: QueryInput): PaginatedUserAssignmentOutputType
+  medias(query: QueryInput): PaginatedMediaOutputType
+  idp(query: QueryInput): IdpUserType!
+}
+
+type PaginatedUserOutputType {
+  pagination: PaginationOutput!
+  data: [UserOutputType!]!
+}
+
+enum LocationFilterKey {
+  id
+  created_at
+  updated_at
+  name
+  address
+  longitude
+  latitude
+}
+
+input LocationInputType {
+  name: String!
+  address: String
+}
+
+type LocationOutputType {
+  id: ID!
+  created_at: String!
+  updated_at: String!
+  name: String!
+  address: String
+  longitude: Float
+  latitude: Float
+  user_assignments(query: QueryInput): PaginatedUserAssignmentOutputType
+  posts(query: QueryInput): PaginatedPostOutputType
+  medias(query: QueryInput): PaginatedMediaOutputType
+}
+
+type PaginatedLocationOutputType {
+  pagination: PaginationOutput!
+  data: [LocationOutputType!]!
+}
+
+enum TagFilterKey {
+  id
+  created_at
+  updated_at
+  name
+  type
+  description
+}
+
+input TagInputType {
+  name: String!
+  type: TagType!
+  description: String
+  meta: JSON
+}
+
+type TagOutputType {
+  id: ID!
+  created_at: String!
+  updated_at: String!
+  name: String!
+  type: TagType!
+  description: String
+  meta: JSON
+  tag_assignments(query: QueryInput): PaginatedTagAssignmentOutputType
+}
+
+type PaginatedTagOutputType {
+  pagination: PaginationOutput!
+  data: [TagOutputType!]!
+}
+
+enum PostFilterKey {
+  id
+  created_at
+  updated_at
+  name
+  type
+  description
+  published_at
+  happens_at_date
+  happens_at_time
+  expires_at
+  location_id
+}
+
+input PostInputType {
+  name: String!
+  type: PostType!
+  description: String
+  meta: JSON
+  published_at: String
+  happens_at_date: String
+  happens_at_time: String
+  expires_at: String
+  location_id: ID
+}
+
+type PostOutputType {
+  id: ID!
+  created_at: String!
+  updated_at: String!
+  name: String!
+  type: PostType!
+  description: String
+  meta: JSON
+  published_at: String
+  happens_at_date: String
+  happens_at_time: String
+  expires_at: String
+  location_id: ID
+  tag_assignments(query: QueryInput): PaginatedTagAssignmentOutputType
+  location(query: QueryInput): LocationOutputType
+  medias(query: QueryInput): PaginatedMediaOutputType
+}
+
+type PaginatedPostOutputType {
+  pagination: PaginationOutput!
+  data: [PostOutputType!]!
+}
+
+enum TagAssignmentFilterKey {
+  id
+  created_at
+  updated_at
+  tag_id
+  post_id
+}
+
+input TagAssignmentInputType {
+  tag_id: ID!
+  post_id: ID!
+}
+
+type TagAssignmentOutputType {
+  id: ID!
+  created_at: String!
+  updated_at: String!
+  tag_id: ID!
+  post_id: ID!
+  post(query: QueryInput): PostOutputType
+  tag(query: QueryInput): TagOutputType
+}
+
+type PaginatedTagAssignmentOutputType {
+  pagination: PaginationOutput!
+  data: [TagAssignmentOutputType!]!
+}
+
+enum UserAssignmentFilterKey {
+  id
+  created_at
+  updated_at
+  user_id
+  location_id
+}
+
+input UserAssignmentInputType {
+  user_id: ID!
+  location_id: ID!
+}
+
+type UserAssignmentOutputType {
+  id: ID!
+  created_at: String!
+  updated_at: String!
+  user_id: ID!
+  location_id: ID!
+  user(query: QueryInput): UserOutputType
+  location(query: QueryInput): LocationOutputType
+}
+
+type PaginatedUserAssignmentOutputType {
+  pagination: PaginationOutput!
+  data: [UserAssignmentOutputType!]!
+}
+
+type Query {
+  media_query(query: QueryInput): PaginatedMediaOutputType!
+  media_details(id: ID!): MediaOutputType!
+  user_query(query: QueryInput): PaginatedUserOutputType!
+  user_details(id: ID!): UserOutputType!
+  user_exists: Boolean!
+  location_query(query: QueryInput): PaginatedLocationOutputType!
+  location_details(id: ID!): LocationOutputType!
+  tag_query(query: QueryInput): PaginatedTagOutputType!
+  tag_details(id: ID!): TagOutputType!
+  post_query(query: QueryInput): PaginatedPostOutputType!
+  post_details(id: ID!): PostOutputType!
+  tag_assignment_query(query: QueryInput): PaginatedTagAssignmentOutputType!
+  tag_assignment_details(id: ID!): TagAssignmentOutputType!
+  user_assignment_query(query: QueryInput): PaginatedUserAssignmentOutputType!
+  user_assignment_details(id: ID!): UserAssignmentOutputType!
+}
+
+type Mutation {
+  media_init(input: MediaInputType): MediaUploadInfo!
+  media_finalize(id: ID!): MediaOutputType
+  media_delete(id: ID!): MediaOutputType
+  user_create(input: UserInputType!): UserOutputType!
+  user_update(id: ID!, input: UserInputType!): UserOutputType!
+  user_delete(id: ID!): UserOutputType!
+  sync_user(type: UserType!): UserOutputType!
+  location_create(input: LocationInputType!): LocationOutputType!
+  location_update(id: ID!, input: LocationInputType!): LocationOutputType!
+  location_delete(id: ID!): LocationOutputType!
+  tag_create(input: TagInputType!): TagOutputType!
+  tag_update(id: ID!, input: TagInputType!): TagOutputType!
+  tag_delete(id: ID!): TagOutputType!
+  post_create(input: PostInputType!): PostOutputType!
+  post_update(id: ID!, input: PostInputType!): PostOutputType!
+  post_delete(id: ID!): PostOutputType!
+  tag_assignment_create(input: TagAssignmentInputType!): TagAssignmentOutputType!
+  tag_assignment_delete(id: ID!): TagAssignmentOutputType!
+  user_assignment_create(input: UserAssignmentInputType!): UserAssignmentOutputType!
+  user_assignment_delete(id: ID!): UserAssignmentOutputType!
+}

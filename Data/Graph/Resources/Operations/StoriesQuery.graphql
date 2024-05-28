@@ -1,0 +1,37 @@
+query Stories($query: QueryInput) {
+  post_query(query: $query) {
+    data {
+      id
+      expires_at
+      medias {
+        data {
+          path
+          is_favourite
+        }
+      }
+      location {
+        id
+        name
+        address
+        medias {
+          data {
+            path
+            is_favourite
+          }
+        }
+      }
+      tag_assignments {
+        data {
+          tag {
+            name
+          }
+        }
+      }
+    }
+    pagination {
+      cursor
+      has_next
+      total
+    }
+  }
+}
