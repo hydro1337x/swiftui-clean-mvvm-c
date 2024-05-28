@@ -9,7 +9,7 @@ import Foundation
 
 public protocol FetchImageUseCase: UseCase where Input == String, Output == Data {}
 
-public class ConcreteFetchImageUseCase: FetchImageUseCase {
+public final class ConcreteFetchImageUseCase: FetchImageUseCase {
     private let repository: FetchImageRepository
     
     public init(repository: FetchImageRepository) {

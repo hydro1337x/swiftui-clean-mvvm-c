@@ -16,6 +16,7 @@ public struct HomeFeed: View {
         self.storyList = storyList
     }
     
+    @MainActor
     @ViewBuilder
     var background: some View {
         Group {
@@ -44,9 +45,9 @@ public struct HomeFeed: View {
                     )
                     .padding(.horizontal, 10)
                     .padding(.bottom, 10)
-                    .onAppear { store.handleOnItemAppear(item) }
+                    .onAppear { store.itemAppeared(item) }
                     .onTapGesture {
-                        store.handleItemSelection(item)
+                        store.itemSelected(item)
                     }
                 }
                 
@@ -68,11 +69,12 @@ public struct HomeFeed: View {
         .background(background)
         .listStyle(.plain)
         .refreshable {
-            await store.handleOnRefresh()
+            await store.refresh()
         }
         .onAppear {
             UIRefreshControl.appearance().tintColor = UIColor(.accent)
         }
+        .onDisappear(perform: store.disappear)
         .transition(AnyTransition.opacity)
         .animation(.easeInOut, value: store.isLoading)
     }

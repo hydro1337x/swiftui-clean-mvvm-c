@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import Apollo
-import ApolloAPI
+@preconcurrency import Apollo
+@preconcurrency import ApolloAPI
 
 actor SendableQueryAdapter {
     var state: State = .ready
@@ -49,12 +49,12 @@ extension SendableQueryAdapter {
 }
 
 extension ApolloClientProtocol {
-    func tryFetch<Query: GraphQLQuery>(
+    func tryFetch<Query>(
         query: Query,
         cachePolicy: CachePolicy,
         contextIdentifier: UUID?,
         queue: DispatchQueue
-    ) async throws -> Query.Data {
+    ) async throws -> Query.Data where Query: GraphQLQuery, Query: Sendable {
         let adapter = SendableQueryAdapter()
         
         return try await withTaskCancellationHandler {

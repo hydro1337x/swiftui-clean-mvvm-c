@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class ConcreteFetchPostsUseCase: UseCase  {
+public final class ConcreteFetchPostsUseCase: UseCase  {
     private let key = "happens_at_date"
     private let calendar = Calendar.current
     private let formatter: DateFormatter = {

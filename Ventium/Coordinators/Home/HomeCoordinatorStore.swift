@@ -10,6 +10,7 @@ import Domain
 import UI
 import Core
 
+@MainActor
 @Observable
 final class HomeCoordinatorStore {
     enum Path: Hashable {

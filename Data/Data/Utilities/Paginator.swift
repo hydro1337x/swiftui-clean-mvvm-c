@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class Paginator<PageType> {
+public actor Paginator<PageType: Sendable> {
     private var hasNext = true
     private var pages: [PageType] = []
     

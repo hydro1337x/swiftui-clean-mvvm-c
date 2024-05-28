@@ -7,7 +7,7 @@
 
 import Foundation
 
-public func dispatchOnMainQueue(_ operation: @escaping () -> Void) {
+public func dispatchOnMainQueue(_ operation: @Sendable @escaping () -> Void) {
     if Thread.isMainThread {
         operation()
     } else {

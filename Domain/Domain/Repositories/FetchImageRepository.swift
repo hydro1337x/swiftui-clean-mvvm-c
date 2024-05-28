@@ -7,6 +7,6 @@
 
 import Foundation
 
-public protocol FetchImageRepository {
+public protocol FetchImageRepository: Sendable {
     func fetch(_ request: URL) async -> Result<Data, Error>
 }

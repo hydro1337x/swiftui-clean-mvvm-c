@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Story {
+public struct Story: Sendable {
     public let id: String
     public let location: Location
     public let medias: [Media]

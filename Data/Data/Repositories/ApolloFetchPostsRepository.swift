@@ -31,17 +31,17 @@ public struct ApolloFetchPostsRepository: FetchPostsRepository {
     
     public func fetch(_ request: FetchPostsRequest) async -> Result<[Post], Error> {
         if request.isInitial {
-            paginator.reset()
+            await paginator.reset()
         }
         
-        let query = mapRequest(limit: 10, cursor: paginator.cursor, filters: request.filters)
-        
+        let cursor = await paginator.cursor
+        let query = mapRequest(limit: 10, cursor: cursor, filters: request.filters)
         let result = await client.fetch(query: query, cachePolicy: .fetchIgnoringCacheCompletely, contextIdentifier: nil, queue: queue)
         
         do {
             let data = try result.get()
             let paginatedResponse = try postMapper(data)
-            let posts = paginator.paginate(paginatedResponse)
+            let posts = await paginator.paginate(paginatedResponse)
             return .success(posts)
         } catch {
             return .failure(error)

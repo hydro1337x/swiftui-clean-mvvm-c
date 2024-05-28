@@ -39,7 +39,7 @@ public struct ApolloFetchStoriesRepository: FetchStoriesRepository {
         do {
             let data = try result.get()
             let paginatedResponse = try storiesMapper(data)
-            let posts = paginator.paginate(paginatedResponse)
+            let posts = await paginator.paginate(paginatedResponse)
             return .success(posts)
         } catch {
             return .failure(error)

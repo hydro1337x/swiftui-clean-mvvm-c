@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct FetchPostsInput {
+public struct FetchPostsInput: Sendable {
     public let isInitial: Bool
     public let filter: PostFilter
     

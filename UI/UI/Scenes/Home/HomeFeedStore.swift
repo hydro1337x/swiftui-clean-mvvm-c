@@ -9,6 +9,7 @@ import Foundation
 import Domain
 import Core
 
+@MainActor
 @Observable
 public final class HomeFeedStore {
     public private(set) var posts: [PostViewModel] = []
@@ -19,7 +20,7 @@ public final class HomeFeedStore {
     }
     
     public var onItemSelection: ((PostViewModel) -> Void)? = { _ in assertionFailure("HomeFeedStore.onItemSelection is not implemented.") }
-    public var onRefresh: (() async -> Void)? = { assertionFailure("HomeFeedStore.onRefresh is not implemented.") }
+    public var onRefresh: (@Sendable () async -> Void)? = { assertionFailure("HomeFeedStore.onRefresh is not implemented.") }
     
     private(set) var initialTask: Task<Void, Error>?
     private(set) var consecutiveTask: Task<Void, Error>?
@@ -32,12 +33,7 @@ public final class HomeFeedStore {
         self.fetchPostsUseCase = fetchPostsUseCase
     }
     
-    deinit {
-        initialTask?.cancel()
-        consecutiveTask?.cancel()
-    }
-    
-    public func handleOnItemAppear(_ item: PostViewModel) {
+    public func itemAppeared(_ item: PostViewModel) {
         consecutiveTask?.cancel()
         consecutiveTask = Task { @MainActor in
             guard item.id == posts.last?.id, !isLoading else { return }
@@ -47,14 +43,14 @@ public final class HomeFeedStore {
         }
     }
     
-    public func handleOnRefresh() async {
+    public func refresh() async {
         async let fetchPosts = fetchPosts(isInitial: true, filter: filter)
         async let refresh: Void? = onRefresh?()
         let (_, postsResult) = await (refresh, fetchPosts)
         await handleState(postsResult)
     }
     
-    public func handleFilterChange(_ filter: PostFilter) {
+    public func filterChanged(_ filter: PostFilter) {
         self.filter = filter
         initialTask?.cancel()
         initialTask = Task { @MainActor in
@@ -64,11 +60,15 @@ public final class HomeFeedStore {
         }
     }
     
-    public func handleItemSelection(_ item: PostViewModel) {
+    public func itemSelected(_ item: PostViewModel) {
         onItemSelection?(item)
     }
     
-    @MainActor
+    public func disappear() {
+        initialTask?.cancel()
+        consecutiveTask?.cancel()
+    }
+    
     private func handleState(_ result: Result<[PostViewModel], Error>) async {
         switch result {
         case .success(let newPosts):

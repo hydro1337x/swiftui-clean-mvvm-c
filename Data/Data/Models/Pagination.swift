@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Pagination {
+public struct Pagination: Sendable {
     let cursor: Int
     let hasNext: Bool
     

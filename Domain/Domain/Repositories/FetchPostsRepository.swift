@@ -7,6 +7,6 @@
 
 import Foundation
 
-public protocol FetchPostsRepository  {
+public protocol FetchPostsRepository: Sendable  {
     func fetch(_ request: FetchPostsRequest) async -> Result<[Post], Error>
 }

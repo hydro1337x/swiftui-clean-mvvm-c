@@ -47,6 +47,7 @@ struct TabsCoordinator: View {
         .accentColor(Color(.accent))
     }
     
+    @MainActor
     @ViewBuilder
     func makeErrorToastConditionally() -> some View {
         if let message = store.message {

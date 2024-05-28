@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Media {
+public struct Media: Sendable {
     public let url: URL
     public let isFavorite: Bool
     

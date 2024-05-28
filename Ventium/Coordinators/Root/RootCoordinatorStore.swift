@@ -8,6 +8,7 @@
 import Foundation
 import UI
 
+@MainActor
 @Observable
 final class RootCoordinatorStore {
     enum Scene {

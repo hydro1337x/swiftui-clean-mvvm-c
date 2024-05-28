@@ -8,6 +8,7 @@
 import SwiftUI
 import UI
 
+@MainActor
 struct TabsFactory {
   let homeFactory: HomeFactory
   let searchFactory: SearchFactory

@@ -8,6 +8,7 @@
 import SwiftUI
 import UI
 
+@MainActor
 struct RootFactory {
     let authFactory: AuthFactory
     let tabsFactory: TabsFactory

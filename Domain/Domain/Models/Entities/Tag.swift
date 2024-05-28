@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Tag {
+public struct Tag: Sendable {
     public let name: String
     
     public init(name: String) {

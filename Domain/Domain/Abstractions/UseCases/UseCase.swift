@@ -20,7 +20,7 @@ public protocol UseCaseStream<Input, Output> {
     func callAsFunction(_ input: Input) -> AsyncThrowingStream<Output, Error>
 }
 
-public protocol UseCase<Input, Output>: UseCaseStream {
+public protocol UseCase<Input, Output>: UseCaseStream, Sendable {
     associatedtype Input
     associatedtype Output
     

@@ -21,9 +21,9 @@ typealias Callback<I, O> = (I) -> O
 
 struct OnErrorUseCaseDecorator<Input, Output>: UseCase {
     let decoratee: any UseCase<Input, Output>
-    let onError: (Error) -> Void
+    let onError: @Sendable (Error) -> Void
     
-    init(_ decoratee: any UseCase<Input, Output>, onError: @escaping (Error) -> Void) {
+    init(_ decoratee: any UseCase<Input, Output>, onError: @Sendable @escaping (Error) -> Void) {
         self.decoratee = decoratee
         self.onError = onError
     }
@@ -39,6 +39,7 @@ struct OnErrorUseCaseDecorator<Input, Output>: UseCase {
     }
 }
 
+@MainActor
 struct HomeFactory {
     let fetchPostsUseCase: any UseCase<FetchPostsInput, [Post]>
     let fetchStoriesUseCase: any UseCase<FetchStoriesInput, [Story]>

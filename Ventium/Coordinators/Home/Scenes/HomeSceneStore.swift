@@ -10,6 +10,7 @@ import Domain
 import UI
 import Foundation
 
+@MainActor
 @Observable
 final class HomeSceneStore {
     let homeFeedStore: HomeFeedStore
@@ -37,7 +38,7 @@ final class HomeSceneStore {
     
     private func bind() {
         homeFeedStore.onRefresh = { [storyListStore] in
-            await storyListStore.handleOnRefresh()
+            await storyListStore.refresh()
         }
         
         homeFeedStore.onItemSelection = { [weak self] item in
@@ -54,7 +55,7 @@ final class HomeSceneStore {
         }
         
         topSheetStore.onFilterChanged = { [homeFeedStore] filter in
-            homeFeedStore.handleFilterChange(filter)
+            homeFeedStore.filterChanged(filter)
         }
         
         storyPagerStore.onDragEnded = { [weak self] in
@@ -75,7 +76,7 @@ final class HomeSceneStore {
     }
     
     func onAppear() {
-        storyListStore.handleOnAppear()
+        storyListStore.appear()
         topSheetStore.handleInitialFilter()
     }
 }

@@ -9,6 +9,7 @@ import Foundation
 import Domain
 import Core
 
+@MainActor
 @Observable
 public final class StoryListStore {
     public private(set) var stories: [StoryViewModel] = [] {
@@ -35,19 +36,14 @@ public final class StoryListStore {
         self.fetchStoriesUseCase = fetchStoriesUseCase
     }
     
-    deinit {
-        initialTask?.cancel()
-        consecutiveTask?.cancel()
-    }
-    
     public func setFocusedItem(_ item: StoryViewModel?) {
         guard let item else { return }
         
         focusedItem = item
-        handleOnItemAppear(item)
+        itemAppeared(item)
     }
     
-    public func handleOnAppear() {
+    public func appear() {
         initialTask?.cancel()
         initialTask = Task { @MainActor in
             isLoading = true
@@ -56,7 +52,12 @@ public final class StoryListStore {
         }
     }
     
-    public func handleOnItemAppear(_ item: StoryViewModel) {
+    func disappear() {
+        initialTask?.cancel()
+        consecutiveTask?.cancel()
+    }
+    
+    public func itemAppeared(_ item: StoryViewModel) {
         consecutiveTask?.cancel()
         guard item.id == stories.last?.id, !isLoading else { return }
         
@@ -68,13 +69,13 @@ public final class StoryListStore {
     }
     
     @MainActor
-    public func handleOnRefresh() async {
+    public func refresh() async {
         let result = await fetchStories(isInitial: true)
         await handleState(result)
         setFocusedItem(stories.first)
     }
     
-    func handleItemTap(_ item: StoryViewModel) {
+    func itemTapped(_ item: StoryViewModel) {
         onItemTap?(item)
     }
     

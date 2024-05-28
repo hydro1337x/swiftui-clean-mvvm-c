@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct FetchStoriesInput {
+public struct FetchStoriesInput: Sendable {
     public let isInitial: Bool
     
     public init(isInitial: Bool) {

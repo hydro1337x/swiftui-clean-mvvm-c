@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct PaginatedResponse<T> {
+public struct PaginatedResponse<T: Sendable>: Sendable {
     let page: [T]
     let pagination: Pagination
 

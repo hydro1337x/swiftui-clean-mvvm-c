@@ -32,6 +32,7 @@ struct HomeCoordinator: View {
         }
     }
     
+    @MainActor
     @ViewBuilder
     func makeSideMenuConditionally() -> some View {
         if store.isSideMenuVisible {
@@ -44,6 +45,7 @@ struct HomeCoordinator: View {
         }
     }
     
+    @MainActor
     func makeNavigationDestination(with path: HomeCoordinatorStore.Path) -> some View {
         Group {
             switch path {
@@ -56,6 +58,7 @@ struct HomeCoordinator: View {
         .animation(.default, value: store.isNavigationBarBackgroundVisible)
     }
     
+    @MainActor
     func makeTitle() -> some ToolbarContent {
         ToolbarItem(placement: .principal) {
             Text(store.title)
@@ -67,6 +70,7 @@ struct HomeCoordinator: View {
         }
     }
     
+    @MainActor
     func makeRightBarButton() -> some ToolbarContent {
         ToolbarItem(placement: .navigationBarTrailing) {
             Button(action: store.handleRightBarButtonTap) {

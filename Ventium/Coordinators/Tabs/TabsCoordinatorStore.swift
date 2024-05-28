@@ -15,6 +15,7 @@ enum Tab {
     case profile
 }
 
+@MainActor
 @Observable
 final class TabsCoordinatorStore {
     private(set) var tab: Tab
