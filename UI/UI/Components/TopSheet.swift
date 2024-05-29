@@ -68,7 +68,9 @@ public struct TopSheet: View {
                     .onEnded(handleOnDragEnded)
             )
         }
-        .onChange(of: isShown, perform: handleIsShownChanged)
+        .onChange(of: isShown) { _, newValue in
+            handleIsShownChanged(newValue)
+        }
     }
 }
 

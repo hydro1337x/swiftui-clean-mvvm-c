@@ -17,9 +17,9 @@ public struct DualDatePicker: View {
     
     public var body: some View {
         MultiDatePicker("Dual Date Picker", selection: $components)
-            .onChange(of: components) { components in
+            .onChange(of: components) { _, newValue in
                 DispatchQueue.main.async {
-                    handleComponents(components)
+                    handleComponents(newValue)
                 }
             }
     }

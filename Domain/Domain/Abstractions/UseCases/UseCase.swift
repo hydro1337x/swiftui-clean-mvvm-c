@@ -20,20 +20,11 @@ public protocol UseCaseStream<Input, Output> {
     func callAsFunction(_ input: Input) -> AsyncThrowingStream<Output, Error>
 }
 
-public protocol UseCase<Input, Output>: UseCaseStream, Sendable {
+public protocol UseCase<Input, Output>: Sendable {
     associatedtype Input
     associatedtype Output
     
     func callAsFunction(_ input: Input) async -> Result<Output, Error>
-}
-
-public extension UseCase {
-    func callAsFunction(_ input: Input) -> AsyncThrowingStream<Output, Error> {
-        AsyncThrowingStream {
-            let result = await callAsFunction(input)
-            return try result.get()
-        }
-    }
 }
 
 public extension UseCase where Input == Void {
@@ -74,5 +65,25 @@ struct FallbackUseCase<Input, Output>: UseCase {
             }
             return await fallback.callAsFunction(input)
         }
+    }
+}
+
+struct InterceptErrorUseCaseDecorator<Input, Output>: UseCase {
+    let decoratee: any UseCase<Input, Output>
+    let onError: @Sendable (Error) -> Void
+    
+    init(_ decoratee: any UseCase<Input, Output>, onError: @Sendable @escaping (Error) -> Void) {
+        self.decoratee = decoratee
+        self.onError = onError
+    }
+    
+    func callAsFunction(_ input: Input) async -> Result<Output, Error> {
+        let result = await decoratee.callAsFunction(input)
+        
+        if case .failure(let error) = result {
+            onError(error)
+        }
+        
+        return result
     }
 }

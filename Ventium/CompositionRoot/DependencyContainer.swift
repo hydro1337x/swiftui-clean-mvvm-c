@@ -48,7 +48,7 @@ final class DependencyContainer {
     var fetchPostsUseCase: any UseCase<FetchPostsInput, [Post]> {
         ConcreteFetchPostsUseCase(repository: fakeRepository)
     }
-    var fetchStorieUseCase: any UseCase<FetchStoriesInput, [Story]> {
+    var fetchStorieUseCase: any FetchStoriesUseCase {
         ConcreteFetchStoriesUseCase(repository: fakeRepository)
     }
     

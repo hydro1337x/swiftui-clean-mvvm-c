@@ -16,29 +16,6 @@ import Core
 // we can just feature flag the view and its dependencies and return it as a factory closure eg. let makeView: () -> AnyView
 // No need to pass it deep into the Views..
 
-typealias Callback<I, O> = (I) -> O
-
-
-struct OnErrorUseCaseDecorator<Input, Output>: UseCase {
-    let decoratee: any UseCase<Input, Output>
-    let onError: @Sendable (Error) -> Void
-    
-    init(_ decoratee: any UseCase<Input, Output>, onError: @Sendable @escaping (Error) -> Void) {
-        self.decoratee = decoratee
-        self.onError = onError
-    }
-    
-    func callAsFunction(_ input: Input) async -> Result<Output, Error> {
-        let result = await decoratee.callAsFunction(input)
-        
-        if case .failure(let error) = result {
-            onError(error)
-        }
-        
-        return result
-    }
-}
-
 @MainActor
 struct HomeFactory {
     let fetchPostsUseCase: any UseCase<FetchPostsInput, [Post]>
@@ -49,7 +26,7 @@ struct HomeFactory {
         let homeFeedStore = HomeFeedStore(fetchPostsUseCase: fetchPostsUseCase)
         let storyPagerStore = StoryPagerStore()
         let storyListStore = StoryListStore(
-            fetchStoriesUseCase: fetchStoriesUseCase
+            fetchStoriesUseCase: FetchStoriesUseCaseLoggingDecorator(decoratee: fetchStoriesUseCase).retry(count: 3).fallback(fetchStoriesUseCase)
         )
         let topSheetStore = FilterTopSheetStore()
         

@@ -9,11 +9,15 @@ import SwiftUI
 
 public extension View {
     func synchronize<Value: Equatable>(
-      _ first: Binding<Value>,
-      _ second: FocusState<Value>.Binding
+        _ first: Binding<Value>,
+        _ second: FocusState<Value>.Binding
     ) -> some View {
-      self
-        .onChange(of: first.wrappedValue) { second.wrappedValue = $0 }
-        .onChange(of: second.wrappedValue) { first.wrappedValue = $0 }
+        self
+            .onChange(of: first.wrappedValue) { _, newValue in
+                second.wrappedValue = newValue
+            }
+            .onChange(of: second.wrappedValue) { _, newValue in
+                first.wrappedValue = newValue
+            }
     }
 }

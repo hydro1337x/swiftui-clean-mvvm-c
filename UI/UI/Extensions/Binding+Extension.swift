@@ -8,10 +8,10 @@
 import SwiftUI
 
 public extension Binding {
-    static func bind<Value>(
-    _ value: @autoclosure @escaping () -> Value,
-    with action: @escaping (Value) -> Void
-    ) -> Binding<Value> {
-        Binding<Value>(get: value, set: action)
+    static func bind<T>(
+    _ value: @autoclosure @escaping () -> T,
+    with action: @escaping (T) -> Void
+    ) -> Binding<T> {
+        Binding<T>(get: value, set: action)
     }
 }

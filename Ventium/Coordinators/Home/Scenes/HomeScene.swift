@@ -56,6 +56,7 @@ struct HomeScene: View {
         .animation(.default, value: store.storyPagerStore.selectedItem)
     }
     
+    @MainActor
     func makeToolbarItem() -> some ToolbarContent {
         ToolbarItem(placement: .principal) {
             Button(action: store.selectFilterButtonTap) {

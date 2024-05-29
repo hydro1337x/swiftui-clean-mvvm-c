@@ -31,6 +31,7 @@ final class HomeCoordinatorStore {
     private(set) var title: String = ""
     private(set) var isNavigationTitleVisible = false
     
+    // Maybe create HomeCoordinatorStore.Delegates and put all the closures there
     var onStoryTap: ((StoryViewModel) -> Void)? = { _ in assertionFailure("HomeCoordinatorStore.onStoryTap is not implemented.") }
     var onStoryPagerDismiss: (() -> Void)? = { assertionFailure("HomeCoordinatorStore.onStoryPagerDismiss is not implemented.") }
     var onRightBarButtonTap: (() -> Void)? = { assertionFailure("HomeCoordinatorStore.onRightBarButtonTap is not implemented.") }

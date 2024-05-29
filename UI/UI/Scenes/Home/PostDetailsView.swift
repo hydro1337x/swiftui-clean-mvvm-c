@@ -56,8 +56,8 @@ public struct PostDetailsView: View {
         }
         .background(Color(.background))
         .edgesIgnoringSafeArea(.top)
-        .onChange(of: localStore.isHeaderVisible) { isHeaderVisible in
-            isHeaderVisible ? store.handleHeaderAppear() : store.handleHeaderDisappear()
+        .onChange(of: localStore.isHeaderVisible) { _, newValue in
+            newValue ? store.handleHeaderAppear() : store.handleHeaderDisappear()
         }
         .onDisappear(perform: store.handleDisappear)
     }
