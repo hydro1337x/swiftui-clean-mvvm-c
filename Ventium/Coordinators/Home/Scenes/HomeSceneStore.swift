@@ -7,7 +7,7 @@
 
 import Combine
 import Domain
-import UI
+import Presentation
 import Foundation
 
 @MainActor

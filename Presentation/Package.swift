@@ -4,26 +4,26 @@
 import PackageDescription
 
 let package = Package(
-    name: "UI",
+    name: "Presentation",
     platforms: [.iOS(.v17)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "UI",
-            targets: ["UI"]),
+            name: "Presentation",
+            targets: ["Presentation"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "UI",
+            name: "Presentation",
             resources: [
                 .process("Theme/Assets.xcassets"),
                 .process("Theme/Fonts")
             ]
         ),
         .testTarget(
-            name: "UITests",
-            dependencies: ["UI"]),
+            name: "PresentationTests",
+            dependencies: ["Presentation"]),
     ]
 )

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import UI
+import Presentation
 
 struct TabsCoordinator: View {
     let store: TabsCoordinatorStore

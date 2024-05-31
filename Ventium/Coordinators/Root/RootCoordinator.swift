@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import UI
+import Presentation
 
 struct RootCoordinator: View {
     let store: RootCoordinatorStore

@@ -1,5 +1,5 @@
 import XCTest
-@testable import UI
+@testable import Presentation
 
 final class UITests: XCTestCase {
     func testExample() throws {

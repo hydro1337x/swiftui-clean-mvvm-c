@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import UI
+import Presentation
 
 @MainActor
 @Observable

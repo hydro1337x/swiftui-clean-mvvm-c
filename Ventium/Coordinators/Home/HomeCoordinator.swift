@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import UI
+import Presentation
 
 struct HomeCoordinator: View {
     let store: HomeCoordinatorStore

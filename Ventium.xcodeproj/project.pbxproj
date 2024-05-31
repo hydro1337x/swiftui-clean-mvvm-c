@@ -10,7 +10,7 @@
 		F807F9B02C0A6C0D00338A6A /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = F807F9AF2C0A6C0D00338A6A /* Core */; };
 		F807F9B22C0A6C1000338A6A /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = F807F9B12C0A6C1000338A6A /* Data */; };
 		F807F9B42C0A6C1300338A6A /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = F807F9B32C0A6C1300338A6A /* Domain */; };
-		F807F9B62C0A6C1600338A6A /* UI in Frameworks */ = {isa = PBXBuildFile; productRef = F807F9B52C0A6C1600338A6A /* UI */; };
+		F807F9B82C0A704900338A6A /* Presentation in Frameworks */ = {isa = PBXBuildFile; productRef = F807F9B72C0A704900338A6A /* Presentation */; };
 		F8B466602C09D8EA00DFD455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B4665F2C09D8EA00DFD455 /* Assets.xcassets */; };
 		F8B466632C09D8EA00DFD455 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B466622C09D8EA00DFD455 /* Preview Assets.xcassets */; };
 		F8B4666D2C09D8EA00DFD455 /* VentiumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4666C2C09D8EA00DFD455 /* VentiumTests.swift */; };
@@ -79,7 +79,7 @@
 		F8B466852C09D90500DFD455 /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Data; sourceTree = "<group>"; };
 		F8B466862C09DCE700DFD455 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 		F8B466872C09DE5A00DFD455 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
-		F8B466892C0A642B00DFD455 /* UI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UI; sourceTree = "<group>"; };
+		F8B466892C0A642B00DFD455 /* Presentation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Presentation; sourceTree = "<group>"; };
 		F8B4668A2C0A66B600DFD455 /* AuthCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		F8B4668B2C0A66B600DFD455 /* AuthCoordinatorStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCoordinatorStore.swift; sourceTree = "<group>"; };
 		F8B4668D2C0A66B600DFD455 /* HomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F807F9B62C0A6C1600338A6A /* UI in Frameworks */,
+				F807F9B82C0A704900338A6A /* Presentation in Frameworks */,
 				F807F9B42C0A6C1300338A6A /* Domain in Frameworks */,
 				F807F9B22C0A6C1000338A6A /* Data in Frameworks */,
 				F807F9B02C0A6C0D00338A6A /* Core in Frameworks */,
@@ -146,7 +146,7 @@
 		F8B4664F2C09D8E900DFD455 = {
 			isa = PBXGroup;
 			children = (
-				F8B466892C0A642B00DFD455 /* UI */,
+				F8B466892C0A642B00DFD455 /* Presentation */,
 				F8B466872C09DE5A00DFD455 /* Core */,
 				F8B466862C09DCE700DFD455 /* Domain */,
 				F8B466852C09D90500DFD455 /* Data */,
@@ -373,7 +373,7 @@
 				F807F9AF2C0A6C0D00338A6A /* Core */,
 				F807F9B12C0A6C1000338A6A /* Data */,
 				F807F9B32C0A6C1300338A6A /* Domain */,
-				F807F9B52C0A6C1600338A6A /* UI */,
+				F807F9B72C0A704900338A6A /* Presentation */,
 			);
 			productName = Ventium;
 			productReference = F8B466582C09D8E900DFD455 /* Ventium.app */;
@@ -870,9 +870,9 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Domain;
 		};
-		F807F9B52C0A6C1600338A6A /* UI */ = {
+		F807F9B72C0A704900338A6A /* Presentation */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = UI;
+			productName = Presentation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
