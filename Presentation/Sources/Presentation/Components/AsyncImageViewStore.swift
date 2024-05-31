@@ -12,8 +12,9 @@ import Core
 @MainActor
 @Observable
 public final class AsyncImageViewStore {
-    enum State {
+    enum State: Equatable {
         case initial
+        case loading
         case loaded(Data)
         case failed
     }
@@ -31,9 +32,23 @@ public final class AsyncImageViewStore {
     }
     
     func handleOnAppear() {
+        fetch()
+    }
+    
+    func handleRetryButtonTapped() {
+        fetch()
+    }
+    
+    func handleOnDisappear() {
+        task?.cancel()
+    }
+    
+    private func fetch() {
         task?.cancel()
         
         task = Task { @MainActor in
+            state = .loading
+            
             let result = await fetchImage()
             
             switch result {
@@ -43,10 +58,6 @@ public final class AsyncImageViewStore {
                 state = .failed
             }
         }
-    }
-    
-    func handleOnDisappear() {
-        task?.cancel()
     }
 }
 

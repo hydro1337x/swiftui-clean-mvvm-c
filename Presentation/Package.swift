@@ -10,13 +10,22 @@ let package = Package(
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "Presentation",
-            targets: ["Presentation"]),
+            targets: ["Presentation"]
+        ),
+    ],
+    dependencies: [
+        .package(path: "../Domain"),
+        .package(path: "../Core")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "Presentation",
+            dependencies: [
+                .product(name: "Domain", package: "Domain"),
+                .product(name: "Core", package: "Core")
+            ],
             resources: [
                 .process("Theme/Assets.xcassets"),
                 .process("Theme/Fonts")
