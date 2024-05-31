@@ -84,7 +84,7 @@ public final class StoryListStore {
         switch result {
         case .success(let items):
             isLoading = false
-            stories = items
+            stories += items
         case .failure:
             isLoading = false
         }

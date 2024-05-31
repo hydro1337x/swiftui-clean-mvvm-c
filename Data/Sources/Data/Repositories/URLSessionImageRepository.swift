@@ -17,9 +17,17 @@ public struct URLSessionImageRepository: FetchImageRepository {
     
     public func fetch(_ request: URL) async -> Result<Data, any Error> {
         do {
-            let (data, _) = try await session.data(from: request)
+            let (data, response) = try await session.data(from: request)
             
-            return .success(data)
+            if let httpResponse = response as? HTTPURLResponse {
+                if 200...300 ~= httpResponse.statusCode {
+                    return .success(data)
+                } else {
+                    return .failure(URLError(.unknown))
+                }
+            } else {
+                return .failure(URLError(.badServerResponse))
+            }
         } catch {
             return .failure(error)
         }

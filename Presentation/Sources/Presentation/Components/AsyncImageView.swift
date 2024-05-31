@@ -56,6 +56,7 @@ struct AsyncImageView: View {
                         .clipped()
                     Button(action: store.handleRetryButtonTapped) {
                         Text("Retry")
+                            .foregroundStyle(Color(.accent))
                             .frame(width: 100, height: 44)
                     }
                     .tint(Color(.accent))

@@ -76,7 +76,7 @@ public final class HomeFeedStore {
         switch result {
         case .success(let newPosts):
             isLoading = false
-            posts = newPosts
+            posts += newPosts
         case .failure:
             isLoading = false
         }
