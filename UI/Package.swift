@@ -18,7 +18,7 @@ let package = Package(
         .target(
             name: "UI",
             resources: [
-                .process("Theme/Assets"),
+                .process("Theme/Assets.xcassets"),
                 .process("Theme/Fonts")
             ]
         ),
