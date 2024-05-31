@@ -22,7 +22,7 @@ struct PostCard: View {
                 tags: tags
             )
             
-            AsyncImageView(url: posterURL)
+            AsyncImageView_Old(url: posterURL)
                 .frame(height: 220)
                 .clipped()
                 .cornerRadius(8)

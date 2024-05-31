@@ -1,5 +1,5 @@
 //
-//  AsyncImageView.swift
+//  AsyncImageView_Old.swift
 //  UI
 //
 //  Created by Benjamin Mecanović on 06.03.2023..
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AsyncImageView: View {
+struct AsyncImageView_Old: View {
     enum LoadState: Equatable {
         case empty
         case image
@@ -51,9 +51,9 @@ struct AsyncImageView: View {
     }
 }
 
-struct AsyncImageView_Previews: PreviewProvider {
+struct AsyncImageView_Old_Previews: PreviewProvider {
     static var previews: some View {
-        AsyncImageView(url: URL(string: "https://citypal.me/wp-content/uploads/2016/04/01-e1462017909580.jpg"))
+        AsyncImageView_Old(url: URL(string: "https://citypal.me/wp-content/uploads/2016/04/01-e1462017909580.jpg"))
             .frame(height: 100)
     }
 }

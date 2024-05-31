@@ -18,7 +18,7 @@ public struct StoryPager: View {
     public var body: some View {
         GeometryReader { proxy in
             ZStack {
-                AsyncImageView(url: store.selectedItem?.backgroundURL)
+                AsyncImageView_Old(url: store.selectedItem?.backgroundURL)
                 
                 HStack {
                     Button(action: store.previousItem, label: { Color.clear })

@@ -14,7 +14,7 @@ struct PostCardHeader: View {
 
     var body: some View {
         HStack(spacing: 8) {
-            AsyncImageView(url: imageURL, placeholderResizingMode: .stretch)
+            AsyncImageView_Old(url: imageURL, placeholderResizingMode: .stretch)
                 .frame(width: 36, height: 36)
                 .background(Color.blue)
                 .cornerRadius(18)

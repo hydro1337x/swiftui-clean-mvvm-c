@@ -15,14 +15,14 @@ struct StoryThumbnail: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             GeometryReader { proxy in
-                AsyncImageView(url: backgroundURL)
+                AsyncImageView_Old(url: backgroundURL)
                     .frame(width: proxy.size.width, height: proxy.size.height, alignment: .center)
             }
             
             LinearGradient(colors: [.clear, Color(.background)], startPoint: .top, endPoint: .bottom)
             
             VStack {
-                AsyncImageView(url: logoURL)
+                AsyncImageView_Old(url: logoURL)
                     .frame(width: 50, height: 50)
                     .cornerRadius(25)
                 
