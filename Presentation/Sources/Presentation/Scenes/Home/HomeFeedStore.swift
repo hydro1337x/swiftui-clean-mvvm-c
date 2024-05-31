@@ -26,11 +26,14 @@ public final class HomeFeedStore {
     private(set) var consecutiveTask: Task<Void, Error>?
     
     private let fetchPostsUseCase: any UseCase<FetchPostsInput, [Post]>
+    private let makeAsyncImageViewStore: (String) -> AsyncImageViewStore
     
     public init(
-        fetchPostsUseCase: any UseCase<FetchPostsInput, [Post]>
+        fetchPostsUseCase: any UseCase<FetchPostsInput, [Post]>,
+        makeAsyncImageViewStore: @escaping (String) -> AsyncImageViewStore
     ) {
         self.fetchPostsUseCase = fetchPostsUseCase
+        self.makeAsyncImageViewStore = makeAsyncImageViewStore
     }
     
     public func itemAppeared(_ item: PostViewModel) {
@@ -85,7 +88,9 @@ public final class HomeFeedStore {
         
         switch result {
         case .success(let items):
-            let viewModels = ListMapper.map(items, mapper: PostPresenter.map)
+            let viewModels = ListMapper.map(items) { post in
+                PostPresenter.map(post, makeAsyncImageViewStore: makeAsyncImageViewStore)
+            }
             return .success(viewModels)
         case .failure(let error):
             return .failure(error)

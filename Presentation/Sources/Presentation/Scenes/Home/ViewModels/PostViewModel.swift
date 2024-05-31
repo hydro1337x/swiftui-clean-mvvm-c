@@ -12,7 +12,7 @@ public struct PostViewModel: Identifiable, Hashable, Sendable {
     public let name: String
     public let description: String?
     public let avatarURL: URL
-    public let posterURL: URL
+    public let posterStore: AsyncImageViewStore
     public let locationName: String
     public let address: String
     public let tags: [String]
@@ -22,7 +22,7 @@ public struct PostViewModel: Identifiable, Hashable, Sendable {
         name: String,
         description: String?,
         avatarURL: URL,
-        posterURL: URL,
+        posterStore: AsyncImageViewStore,
         locationName: String,
         address: String,
         tags: [String]
@@ -31,7 +31,7 @@ public struct PostViewModel: Identifiable, Hashable, Sendable {
         self.name = name
         self.description = description
         self.avatarURL = avatarURL
-        self.posterURL = posterURL
+        self.posterStore = posterStore
         self.locationName = locationName
         self.address = address
         self.tags = tags

@@ -9,16 +9,18 @@ import Foundation
 import Domain
 
 public enum PostPresenter {
-    public static func map(_ input: Post) -> PostViewModel {
+    public static func map(_ post: Post, makeAsyncImageViewStore: (String) -> AsyncImageViewStore) -> PostViewModel {
+        let posterURL = post.medias.first(where: { $0.isFavorite })!.url.absoluteString
+        let posterStore = makeAsyncImageViewStore(posterURL)
         return PostViewModel(
-            id: input.id,
-            name: input.name,
-            description: input.description,
-            avatarURL: input.location.medias.first(where: { $0.isFavorite })!.url,
-            posterURL: input.medias.first(where: { $0.isFavorite })!.url,
-            locationName: input.location.name,
-            address: input.location.address ?? "",
-            tags: input.tags.map { "#\($0.name)" }
+            id: post.id,
+            name: post.name,
+            description: post.description,
+            avatarURL: post.location.medias.first(where: { $0.isFavorite })!.url,
+            posterStore: posterStore,
+            locationName: post.location.name,
+            address: post.location.address ?? "",
+            tags: post.tags.map { "#\($0.name)" }
         )
     }
 }

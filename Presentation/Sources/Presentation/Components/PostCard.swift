@@ -10,7 +10,7 @@ import SwiftUI
 struct PostCard: View {
     let locationName: String
     let postName: String
-    let posterURL: URL
+    let posterStore: AsyncImageViewStore
     let avatarURL: URL
     let tags: [String]
 
@@ -22,7 +22,7 @@ struct PostCard: View {
                 tags: tags
             )
             
-            AsyncImageView_Old(url: posterURL)
+            AsyncImageView(store: posterStore)
                 .frame(height: 220)
                 .clipped()
                 .cornerRadius(8)
@@ -44,16 +44,17 @@ struct PostCard: View {
 
 struct PostCard_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
+        let posterURL = URL(string: "https://citypal.me/wp-content/uploads/2016/04/01-e1462017909580.jpg")!
+        return Group {
             PostCard(locationName: "Cafee Name",
                      postName: "Recesion Party",
-                     posterURL: URL(string: "https://citypal.me/wp-content/uploads/2016/04/01-e1462017909580.jpg")!,
+                     posterStore: .init(fetchImage: { .success(try! Data(contentsOf: posterURL)) }),
                      avatarURL: URL(string: "https://dw0i2gv3d32l1.cloudfront.net/uploads/stage/stage_image/52688/optimized_large_thumb_stage.jpg")!,
                      tags: ["nightlife", "concert", "standup"]
             )
             PostCard(locationName: "Cafee Name",
                      postName: "Recesion Party",
-                     posterURL: URL(string: "www.fakeurl.com")!,
+                     posterStore: .init(fetchImage: { .failure(URLError(.badURL)) }),
                      avatarURL: URL(string: "www.fakeurl.com")!,
                      tags: ["nightlife", "concert", "standup"]
             )

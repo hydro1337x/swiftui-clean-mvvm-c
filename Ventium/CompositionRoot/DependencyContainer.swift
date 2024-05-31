@@ -42,6 +42,9 @@ final class DependencyContainer {
                 try StoryMapper.map(input, baseURL: mediaBaseURL)
             }
     }
+    var fetchImageRepository: FetchImageRepository {
+        URLSessionImageRepository(session: .shared)
+    }
     
     let fakeRepository = FakeRepository()
     
@@ -51,6 +54,9 @@ final class DependencyContainer {
     var fetchStorieUseCase: any FetchStoriesUseCase {
         ConcreteFetchStoriesUseCase(repository: fakeRepository)
     }
+    var fetchImageUseCase: any FetchImageUseCase {
+        ConcreteFetchImageUseCase(repository: fetchImageRepository)
+    }
     
     var profileFactory: ProfileFactory { ProfileFactory() }
     var notificationsFactory: NotificationsFactory { NotificationsFactory() }
@@ -59,6 +65,7 @@ final class DependencyContainer {
         HomeFactory(
             fetchPostsUseCase: fetchPostsUseCase,
             fetchStoriesUseCase: fetchStorieUseCase,
+            fetchImageUseCase: fetchImageUseCase,
             channel: channel
         )
         

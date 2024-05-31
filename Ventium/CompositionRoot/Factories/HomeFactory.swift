@@ -20,10 +20,14 @@ import Core
 struct HomeFactory {
     let fetchPostsUseCase: any UseCase<FetchPostsInput, [Post]>
     let fetchStoriesUseCase: any UseCase<FetchStoriesInput, [Story]>
+    let fetchImageUseCase: any UseCase<String, Data>
     let channel: Channel
     
     func makeHomeScene() -> HomeSceneStore {
-        let homeFeedStore = HomeFeedStore(fetchPostsUseCase: fetchPostsUseCase)
+        let homeFeedStore = HomeFeedStore(
+            fetchPostsUseCase: fetchPostsUseCase,
+            makeAsyncImageViewStore: makeAsyncImageViewStore
+        )
         let storyPagerStore = StoryPagerStore()
         let storyListStore = StoryListStore(
             fetchStoriesUseCase: FetchStoriesUseCaseLoggingDecorator(decoratee: fetchStoriesUseCase).retry(count: 3).fallback(fetchStoriesUseCase)
@@ -40,10 +44,16 @@ struct HomeFactory {
     
     func makePostDetailsScene(with viewModel: PostViewModel) -> PostDetailsViewStore {
         return PostDetailsViewStore(
-            posterURL: viewModel.posterURL,
+            posterURL: URL(string: "www.google.com")!/*viewModel.posterURL*/,
             logoURL: viewModel.avatarURL,
             title: viewModel.name,
             description: viewModel.description ?? ""
         )
+    }
+    
+    private func makeAsyncImageViewStore(with url: String) -> AsyncImageViewStore {
+        AsyncImageViewStore {
+            await fetchImageUseCase(url)
+        }
     }
 }

@@ -39,7 +39,7 @@ public struct HomeFeed: View {
                     PostCard(
                         locationName: item.locationName,
                         postName: item.name,
-                        posterURL: item.posterURL,
+                        posterStore: item.posterStore,
                         avatarURL: item.avatarURL,
                         tags: item.tags
                     )
