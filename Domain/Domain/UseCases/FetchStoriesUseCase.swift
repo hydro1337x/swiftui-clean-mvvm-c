@@ -10,6 +10,14 @@ import Foundation
 // TODO: - This might be possible in Swift 5.9
 public typealias FetchStoriesUseCase = UseCase<FetchStoriesInput, [Story]>
 
+public struct FetchStoriesInput: Sendable {
+    public let isInitial: Bool
+    
+    public init(isInitial: Bool) {
+        self.isInitial = isInitial
+    }
+}
+
 public struct ConcreteFetchStoriesUseCase: UseCase {
     private let repository: FetchStoriesRepository
     

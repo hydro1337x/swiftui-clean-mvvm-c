@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B5545C0C2966033500F3D180 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5545C0B2966033500F3D180 /* Story.swift */; };
 		B5545C0E296605D800F3D180 /* FetchStoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5545C0D296605D800F3D180 /* FetchStoriesRepository.swift */; };
-		B5545C122966060B00F3D180 /* FetchStoriesInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5545C112966060B00F3D180 /* FetchStoriesInput.swift */; };
 		B5545C142966066100F3D180 /* FetchStoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5545C132966066100F3D180 /* FetchStoriesUseCase.swift */; };
 		B55D762F2916E8EC00ABF6E0 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55D76262916E8EC00ABF6E0 /* Domain.framework */; };
 		B55D77002916FAE300ABF6E0 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D76FF2916FAE300ABF6E0 /* Post.swift */; };
@@ -26,7 +25,6 @@
 		B5A05AC02964806D00937561 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A05ABF2964806D00937561 /* Location.swift */; };
 		B5A05AC22964810900937561 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A05AC12964810900937561 /* Media.swift */; };
 		B5A05AC42964F8D700937561 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A05AC32964F8D700937561 /* Tag.swift */; };
-		B5F2F8F129214174009D339E /* FetchPostsInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2F8F029214174009D339E /* FetchPostsInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +40,6 @@
 /* Begin PBXFileReference section */
 		B5545C0B2966033500F3D180 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		B5545C0D296605D800F3D180 /* FetchStoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchStoriesRepository.swift; sourceTree = "<group>"; };
-		B5545C112966060B00F3D180 /* FetchStoriesInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchStoriesInput.swift; sourceTree = "<group>"; };
 		B5545C132966066100F3D180 /* FetchStoriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchStoriesUseCase.swift; sourceTree = "<group>"; };
 		B55D76262916E8EC00ABF6E0 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55D762E2916E8EC00ABF6E0 /* DomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,7 +57,6 @@
 		B5A05ABF2964806D00937561 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		B5A05AC12964810900937561 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		B5A05AC32964F8D700937561 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
-		B5F2F8F029214174009D339E /* FetchPostsInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPostsInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,9 +175,7 @@
 		B5F2F8EF29214167009D339E /* ValueObjects */ = {
 			isa = PBXGroup;
 			children = (
-				B5F2F8F029214174009D339E /* FetchPostsInput.swift */,
 				B570A59E295B5C9100293306 /* FetchPostsRequest.swift */,
-				B5545C112966060B00F3D180 /* FetchStoriesInput.swift */,
 				B58ED95529590D7100494671 /* FilterOperator.swift */,
 				B58ED95729590FCF00494671 /* FilterInput.swift */,
 				B58ED959295911D200494671 /* PostFilter.swift */,
@@ -299,8 +293,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5545C142966066100F3D180 /* FetchStoriesUseCase.swift in Sources */,
-				B5545C122966060B00F3D180 /* FetchStoriesInput.swift in Sources */,
-				B5F2F8F129214174009D339E /* FetchPostsInput.swift in Sources */,
 				B58ED95629590D7100494671 /* FilterOperator.swift in Sources */,
 				B55D7710291708AB00ABF6E0 /* UseCase.swift in Sources */,
 				B55D7718291714EE00ABF6E0 /* FetchImageRepository.swift in Sources */,

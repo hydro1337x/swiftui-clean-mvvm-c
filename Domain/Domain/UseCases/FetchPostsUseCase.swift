@@ -7,7 +7,17 @@
 
 import Foundation
 
-public final class ConcreteFetchPostsUseCase: UseCase  {
+public struct FetchPostsInput: Sendable {
+    public let isInitial: Bool
+    public let filter: PostFilter
+    
+    public init(isInitial: Bool, filter: PostFilter) {
+        self.isInitial = isInitial
+        self.filter = filter
+    }
+}
+
+public struct ConcreteFetchPostsUseCase: UseCase  {
     private let key = "happens_at_date"
     private let calendar = Calendar.current
     private let formatter: DateFormatter = {
