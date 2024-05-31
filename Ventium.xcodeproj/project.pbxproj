@@ -7,125 +7,133 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B50ACEE72917DA94000CBB4E /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50ACEE62917DA94000CBB4E /* RootCoordinator.swift */; };
-		B50ACEE92917DA9F000CBB4E /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50ACEE82917DA9F000CBB4E /* HomeCoordinator.swift */; };
-		B50ACEEB2917DAA7000CBB4E /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50ACEEA2917DAA7000CBB4E /* SearchCoordinator.swift */; };
-		B50ACEED2917DAB9000CBB4E /* NotificationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50ACEEC2917DAB9000CBB4E /* NotificationsCoordinator.swift */; };
-		B50ACEEF2917DAC0000CBB4E /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50ACEEE2917DAC0000CBB4E /* ProfileCoordinator.swift */; };
-		B50ACEFA291810AD000CBB4E /* TabsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50ACEF9291810AD000CBB4E /* TabsCoordinator.swift */; };
-		B50ACF0829181884000CBB4E /* IfLetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50ACF0729181884000CBB4E /* IfLetView.swift */; };
-		B50EC3772955055500162314 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55D76182916E88200ABF6E0 /* UI.framework */; };
-		B50EC3782955055500162314 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B55D76182916E88200ABF6E0 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B538936629A9184E00A99124 /* PathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538936529A9184E00A99124 /* PathView.swift */; };
-		B5487C4E299D93790062B67C /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5487C4D299D93790062B67C /* Channel.swift */; };
-		B55D75CA2916E69400ABF6E0 /* VentiumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D75C92916E69400ABF6E0 /* VentiumApp.swift */; };
-		B55D76412916E91500ABF6E0 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55D76402916E91500ABF6E0 /* Domain.framework */; };
-		B56957522947CC7800E83691 /* TestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56957512947CC7800E83691 /* TestCase.swift */; };
-		B575AFED29C51607001D88A2 /* HomeSceneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B575AFEC29C51607001D88A2 /* HomeSceneStore.swift */; };
-		B57A858529AAA2B30015BCF0 /* RootCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57A858429AAA2B30015BCF0 /* RootCoordinatorEvent.swift */; };
-		B57A858729AAA3530015BCF0 /* HomeCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57A858629AAA3530015BCF0 /* HomeCoordinatorEvent.swift */; };
-		B57A858929AAA3BE0015BCF0 /* TabsCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57A858829AAA3BE0015BCF0 /* TabsCoordinatorEvent.swift */; };
-		B57D1225293181980007AB04 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57D1224293181980007AB04 /* AuthCoordinator.swift */; };
-		B58ED91B29570CB000494671 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58ED91A29570CB000494671 /* DependencyContainer.swift */; };
-		B5970BE129BBB0C900329172 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5970BE029BBB0C900329172 /* NetworkMonitor.swift */; };
-		B5970BE729BCB95300329172 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5970BE629BCB95300329172 /* DebugView.swift */; };
-		B5970BE929BCBD0800329172 /* ShakeGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5970BE829BCBD0800329172 /* ShakeGesture.swift */; };
-		B5970BEC29BD048500329172 /* NetworkMonitorDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5970BEB29BD048500329172 /* NetworkMonitorDecorator.swift */; };
-		B5A05ABA29647A4900937561 /* HomeCoordinatorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A05AB929647A4900937561 /* HomeCoordinatorStore.swift */; };
-		B5A05ABC29647B1C00937561 /* TabsCoordinatorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A05ABB29647B1C00937561 /* TabsCoordinatorStore.swift */; };
-		B5A05ABE29647C1600937561 /* RootCoordinatorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A05ABD29647C1600937561 /* RootCoordinatorStore.swift */; };
-		B5DD687E294B7D8F00877945 /* RootFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DD687D294B7D8F00877945 /* RootFactory.swift */; };
-		B5DD6880294B7D9900877945 /* AuthFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DD687F294B7D9900877945 /* AuthFactory.swift */; };
-		B5DD6882294B7DA300877945 /* TabsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DD6881294B7DA300877945 /* TabsFactory.swift */; };
-		B5DD6884294B7DAC00877945 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DD6883294B7DAC00877945 /* HomeFactory.swift */; };
-		B5DD6886294B7DB600877945 /* SearchFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DD6885294B7DB600877945 /* SearchFactory.swift */; };
-		B5DD6888294B7DC200877945 /* NotificationsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DD6887294B7DC200877945 /* NotificationsFactory.swift */; };
-		B5DD688A294B7DCA00877945 /* ProfileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DD6889294B7DCA00877945 /* ProfileFactory.swift */; };
-		B5DD6895294BD3BC00877945 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DD6894294BD3BC00877945 /* HomeScene.swift */; };
-		B5F285C72920524A0039505F /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F285C62920524A0039505F /* Data.framework */; };
-		F83E8F5F2C062C5500B28F84 /* AuthCoordinatorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83E8F5E2C062C5500B28F84 /* AuthCoordinatorStore.swift */; };
+		F807F9B02C0A6C0D00338A6A /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = F807F9AF2C0A6C0D00338A6A /* Core */; };
+		F807F9B22C0A6C1000338A6A /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = F807F9B12C0A6C1000338A6A /* Data */; };
+		F807F9B42C0A6C1300338A6A /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = F807F9B32C0A6C1300338A6A /* Domain */; };
+		F807F9B62C0A6C1600338A6A /* UI in Frameworks */ = {isa = PBXBuildFile; productRef = F807F9B52C0A6C1600338A6A /* UI */; };
+		F8B466602C09D8EA00DFD455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B4665F2C09D8EA00DFD455 /* Assets.xcassets */; };
+		F8B466632C09D8EA00DFD455 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B466622C09D8EA00DFD455 /* Preview Assets.xcassets */; };
+		F8B4666D2C09D8EA00DFD455 /* VentiumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4666C2C09D8EA00DFD455 /* VentiumTests.swift */; };
+		F8B466772C09D8EB00DFD455 /* VentiumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466762C09D8EB00DFD455 /* VentiumUITests.swift */; };
+		F8B466792C09D8EB00DFD455 /* VentiumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466782C09D8EB00DFD455 /* VentiumUITestsLaunchTests.swift */; };
+		F8B466B82C0A66B700DFD455 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4668A2C0A66B600DFD455 /* AuthCoordinator.swift */; };
+		F8B466B92C0A66B700DFD455 /* AuthCoordinatorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4668B2C0A66B600DFD455 /* AuthCoordinatorStore.swift */; };
+		F8B466BA2C0A66B700DFD455 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4668D2C0A66B600DFD455 /* HomeScene.swift */; };
+		F8B466BB2C0A66B700DFD455 /* HomeSceneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4668E2C0A66B600DFD455 /* HomeSceneStore.swift */; };
+		F8B466BC2C0A66B700DFD455 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466902C0A66B600DFD455 /* HomeCoordinator.swift */; };
+		F8B466BD2C0A66B700DFD455 /* HomeCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466912C0A66B600DFD455 /* HomeCoordinatorEvent.swift */; };
+		F8B466BE2C0A66B700DFD455 /* HomeCoordinatorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466922C0A66B600DFD455 /* HomeCoordinatorStore.swift */; };
+		F8B466BF2C0A66B700DFD455 /* NotificationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466942C0A66B600DFD455 /* NotificationsCoordinator.swift */; };
+		F8B466C02C0A66B700DFD455 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466962C0A66B600DFD455 /* ProfileCoordinator.swift */; };
+		F8B466C12C0A66B700DFD455 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466982C0A66B600DFD455 /* RootCoordinator.swift */; };
+		F8B466C22C0A66B700DFD455 /* RootCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466992C0A66B600DFD455 /* RootCoordinatorEvent.swift */; };
+		F8B466C32C0A66B700DFD455 /* RootCoordinatorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4669A2C0A66B600DFD455 /* RootCoordinatorStore.swift */; };
+		F8B466C42C0A66B700DFD455 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4669C2C0A66B600DFD455 /* SearchCoordinator.swift */; };
+		F8B466C52C0A66B700DFD455 /* TabsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4669E2C0A66B600DFD455 /* TabsCoordinator.swift */; };
+		F8B466C62C0A66B700DFD455 /* TabsCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4669F2C0A66B600DFD455 /* TabsCoordinatorEvent.swift */; };
+		F8B466C72C0A66B700DFD455 /* TabsCoordinatorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466A02C0A66B600DFD455 /* TabsCoordinatorStore.swift */; };
+		F8B466C82C0A66B700DFD455 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466A32C0A66B700DFD455 /* Channel.swift */; };
+		F8B466C92C0A66B700DFD455 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466A42C0A66B700DFD455 /* NetworkMonitor.swift */; };
+		F8B466CA2C0A66B700DFD455 /* ShakeGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466A52C0A66B700DFD455 /* ShakeGesture.swift */; };
+		F8B466CB2C0A66B700DFD455 /* NetworkMonitorDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466A72C0A66B700DFD455 /* NetworkMonitorDecorator.swift */; };
+		F8B466CC2C0A66B700DFD455 /* VentiumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466A92C0A66B700DFD455 /* VentiumApp.swift */; };
+		F8B466CD2C0A66B700DFD455 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466AA2C0A66B700DFD455 /* DebugView.swift */; };
+		F8B466CE2C0A66B700DFD455 /* IfLetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466AB2C0A66B700DFD455 /* IfLetView.swift */; };
+		F8B466CF2C0A66B700DFD455 /* PathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466AC2C0A66B700DFD455 /* PathView.swift */; };
+		F8B466D02C0A66B700DFD455 /* AuthFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466AE2C0A66B700DFD455 /* AuthFactory.swift */; };
+		F8B466D12C0A66B700DFD455 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466AF2C0A66B700DFD455 /* HomeFactory.swift */; };
+		F8B466D22C0A66B700DFD455 /* NotificationsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466B02C0A66B700DFD455 /* NotificationsFactory.swift */; };
+		F8B466D32C0A66B700DFD455 /* ProfileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466B12C0A66B700DFD455 /* ProfileFactory.swift */; };
+		F8B466D42C0A66B700DFD455 /* RootFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466B22C0A66B700DFD455 /* RootFactory.swift */; };
+		F8B466D52C0A66B700DFD455 /* SearchFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466B32C0A66B700DFD455 /* SearchFactory.swift */; };
+		F8B466D62C0A66B700DFD455 /* TabsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466B42C0A66B700DFD455 /* TabsFactory.swift */; };
+		F8B466D72C0A66B700DFD455 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466B62C0A66B700DFD455 /* DependencyContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B55D75D72916E69600ABF6E0 /* PBXContainerItemProxy */ = {
+		F8B466692C09D8EA00DFD455 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B55D75BE2916E69400ABF6E0 /* Project object */;
+			containerPortal = F8B466502C09D8E900DFD455 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B55D75C52916E69400ABF6E0;
+			remoteGlobalIDString = F8B466572C09D8E900DFD455;
+			remoteInfo = Ventium;
+		};
+		F8B466732C09D8EB00DFD455 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8B466502C09D8E900DFD455 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8B466572C09D8E900DFD455;
 			remoteInfo = Ventium;
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		B50EC3792955055500162314 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B50EC3782955055500162314 /* UI.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		B50ACEE62917DA94000CBB4E /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
-		B50ACEE82917DA9F000CBB4E /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
-		B50ACEEA2917DAA7000CBB4E /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
-		B50ACEEC2917DAB9000CBB4E /* NotificationsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCoordinator.swift; sourceTree = "<group>"; };
-		B50ACEEE2917DAC0000CBB4E /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
-		B50ACEF9291810AD000CBB4E /* TabsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsCoordinator.swift; sourceTree = "<group>"; };
-		B50ACF0729181884000CBB4E /* IfLetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfLetView.swift; sourceTree = "<group>"; };
-		B538936529A9184E00A99124 /* PathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathView.swift; sourceTree = "<group>"; };
-		B5487C4D299D93790062B67C /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
-		B55D75C62916E69400ABF6E0 /* Ventium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ventium.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B55D75C92916E69400ABF6E0 /* VentiumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentiumApp.swift; sourceTree = "<group>"; };
-		B55D75D62916E69600ABF6E0 /* VentiumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VentiumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B55D76182916E88200ABF6E0 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B55D76402916E91500ABF6E0 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B55D76682916E9B800ABF6E0 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B56957512947CC7800E83691 /* TestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCase.swift; sourceTree = "<group>"; };
-		B575AFEC29C51607001D88A2 /* HomeSceneStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneStore.swift; sourceTree = "<group>"; };
-		B57A858429AAA2B30015BCF0 /* RootCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinatorEvent.swift; sourceTree = "<group>"; };
-		B57A858629AAA3530015BCF0 /* HomeCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinatorEvent.swift; sourceTree = "<group>"; };
-		B57A858829AAA3BE0015BCF0 /* TabsCoordinatorEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsCoordinatorEvent.swift; sourceTree = "<group>"; };
-		B57D1224293181980007AB04 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
-		B58ED91A29570CB000494671 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
-		B5970BE029BBB0C900329172 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
-		B5970BE629BCB95300329172 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
-		B5970BE829BCBD0800329172 /* ShakeGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeGesture.swift; sourceTree = "<group>"; };
-		B5970BEB29BD048500329172 /* NetworkMonitorDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitorDecorator.swift; sourceTree = "<group>"; };
-		B5A05AB929647A4900937561 /* HomeCoordinatorStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinatorStore.swift; sourceTree = "<group>"; };
-		B5A05ABB29647B1C00937561 /* TabsCoordinatorStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsCoordinatorStore.swift; sourceTree = "<group>"; };
-		B5A05ABD29647C1600937561 /* RootCoordinatorStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinatorStore.swift; sourceTree = "<group>"; };
-		B5D61D432932C67300669331 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5DD687D294B7D8F00877945 /* RootFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFactory.swift; sourceTree = "<group>"; };
-		B5DD687F294B7D9900877945 /* AuthFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFactory.swift; sourceTree = "<group>"; };
-		B5DD6881294B7DA300877945 /* TabsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsFactory.swift; sourceTree = "<group>"; };
-		B5DD6883294B7DAC00877945 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
-		B5DD6885294B7DB600877945 /* SearchFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFactory.swift; sourceTree = "<group>"; };
-		B5DD6887294B7DC200877945 /* NotificationsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsFactory.swift; sourceTree = "<group>"; };
-		B5DD6889294B7DCA00877945 /* ProfileFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFactory.swift; sourceTree = "<group>"; };
-		B5DD6894294BD3BC00877945 /* HomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
-		B5F285C62920524A0039505F /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F80CE7462BFD5723003C4A97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		F83E8F5E2C062C5500B28F84 /* AuthCoordinatorStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinatorStore.swift; sourceTree = "<group>"; };
+		F8B466582C09D8E900DFD455 /* Ventium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ventium.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8B4665F2C09D8EA00DFD455 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F8B466622C09D8EA00DFD455 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F8B466682C09D8EA00DFD455 /* VentiumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VentiumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8B4666C2C09D8EA00DFD455 /* VentiumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentiumTests.swift; sourceTree = "<group>"; };
+		F8B466722C09D8EA00DFD455 /* VentiumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VentiumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8B466762C09D8EB00DFD455 /* VentiumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentiumUITests.swift; sourceTree = "<group>"; };
+		F8B466782C09D8EB00DFD455 /* VentiumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentiumUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F8B466852C09D90500DFD455 /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Data; sourceTree = "<group>"; };
+		F8B466862C09DCE700DFD455 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
+		F8B466872C09DE5A00DFD455 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
+		F8B466892C0A642B00DFD455 /* UI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UI; sourceTree = "<group>"; };
+		F8B4668A2C0A66B600DFD455 /* AuthCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		F8B4668B2C0A66B600DFD455 /* AuthCoordinatorStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCoordinatorStore.swift; sourceTree = "<group>"; };
+		F8B4668D2C0A66B600DFD455 /* HomeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
+		F8B4668E2C0A66B600DFD455 /* HomeSceneStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSceneStore.swift; sourceTree = "<group>"; };
+		F8B466902C0A66B600DFD455 /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		F8B466912C0A66B600DFD455 /* HomeCoordinatorEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinatorEvent.swift; sourceTree = "<group>"; };
+		F8B466922C0A66B600DFD455 /* HomeCoordinatorStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinatorStore.swift; sourceTree = "<group>"; };
+		F8B466942C0A66B600DFD455 /* NotificationsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsCoordinator.swift; sourceTree = "<group>"; };
+		F8B466962C0A66B600DFD455 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		F8B466982C0A66B600DFD455 /* RootCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		F8B466992C0A66B600DFD455 /* RootCoordinatorEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCoordinatorEvent.swift; sourceTree = "<group>"; };
+		F8B4669A2C0A66B600DFD455 /* RootCoordinatorStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCoordinatorStore.swift; sourceTree = "<group>"; };
+		F8B4669C2C0A66B600DFD455 /* SearchCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
+		F8B4669E2C0A66B600DFD455 /* TabsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsCoordinator.swift; sourceTree = "<group>"; };
+		F8B4669F2C0A66B600DFD455 /* TabsCoordinatorEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsCoordinatorEvent.swift; sourceTree = "<group>"; };
+		F8B466A02C0A66B600DFD455 /* TabsCoordinatorStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsCoordinatorStore.swift; sourceTree = "<group>"; };
+		F8B466A32C0A66B700DFD455 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		F8B466A42C0A66B700DFD455 /* NetworkMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		F8B466A52C0A66B700DFD455 /* ShakeGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeGesture.swift; sourceTree = "<group>"; };
+		F8B466A72C0A66B700DFD455 /* NetworkMonitorDecorator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMonitorDecorator.swift; sourceTree = "<group>"; };
+		F8B466A92C0A66B700DFD455 /* VentiumApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VentiumApp.swift; sourceTree = "<group>"; };
+		F8B466AA2C0A66B700DFD455 /* DebugView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
+		F8B466AB2C0A66B700DFD455 /* IfLetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IfLetView.swift; sourceTree = "<group>"; };
+		F8B466AC2C0A66B700DFD455 /* PathView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathView.swift; sourceTree = "<group>"; };
+		F8B466AE2C0A66B700DFD455 /* AuthFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthFactory.swift; sourceTree = "<group>"; };
+		F8B466AF2C0A66B700DFD455 /* HomeFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
+		F8B466B02C0A66B700DFD455 /* NotificationsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsFactory.swift; sourceTree = "<group>"; };
+		F8B466B12C0A66B700DFD455 /* ProfileFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFactory.swift; sourceTree = "<group>"; };
+		F8B466B22C0A66B700DFD455 /* RootFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootFactory.swift; sourceTree = "<group>"; };
+		F8B466B32C0A66B700DFD455 /* SearchFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFactory.swift; sourceTree = "<group>"; };
+		F8B466B42C0A66B700DFD455 /* TabsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsFactory.swift; sourceTree = "<group>"; };
+		F8B466B62C0A66B700DFD455 /* DependencyContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B55D75C32916E69400ABF6E0 /* Frameworks */ = {
+		F8B466552C09D8E900DFD455 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5F285C72920524A0039505F /* Data.framework in Frameworks */,
-				B50EC3772955055500162314 /* UI.framework in Frameworks */,
-				B55D76412916E91500ABF6E0 /* Domain.framework in Frameworks */,
+				F807F9B62C0A6C1600338A6A /* UI in Frameworks */,
+				F807F9B42C0A6C1300338A6A /* Domain in Frameworks */,
+				F807F9B22C0A6C1000338A6A /* Data in Frameworks */,
+				F807F9B02C0A6C0D00338A6A /* Core in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B55D75D32916E69600ABF6E0 /* Frameworks */ = {
+		F8B466652C09D8EA00DFD455 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8B4666F2C09D8EA00DFD455 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -135,208 +143,226 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B50ACEDB2917D56F000CBB4E /* Coordinators */ = {
+		F8B4664F2C09D8E900DFD455 = {
 			isa = PBXGroup;
 			children = (
-				B5DD688B294BD31A00877945 /* Root */,
-				B5DD688C294BD32000877945 /* Auth */,
-				B5DD688D294BD32400877945 /* Tabs */,
-				B5DD688E294BD32900877945 /* Home */,
-				B5DD688F294BD33500877945 /* Search */,
-				B5DD6890294BD34300877945 /* Notifications */,
-				B5DD6891294BD34A00877945 /* Profile */,
-			);
-			path = Coordinators;
-			sourceTree = "<group>";
-		};
-		B50ACF0629181875000CBB4E /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				B50ACF0729181884000CBB4E /* IfLetView.swift */,
-				B538936529A9184E00A99124 /* PathView.swift */,
-				B5970BE629BCB95300329172 /* DebugView.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		B52292B1299EE54A00C8F74B /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				B5970BE029BBB0C900329172 /* NetworkMonitor.swift */,
-				B5487C4D299D93790062B67C /* Channel.swift */,
-				B5970BE829BCBD0800329172 /* ShakeGesture.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		B55D75BD2916E69400ABF6E0 = {
-			isa = PBXGroup;
-			children = (
-				B55D75C82916E69400ABF6E0 /* Ventium */,
-				B55D75D92916E69600ABF6E0 /* VentiumTests */,
-				B55D75C72916E69400ABF6E0 /* Products */,
-				B55D76172916E88200ABF6E0 /* Frameworks */,
+				F8B466892C0A642B00DFD455 /* UI */,
+				F8B466872C09DE5A00DFD455 /* Core */,
+				F8B466862C09DCE700DFD455 /* Domain */,
+				F8B466852C09D90500DFD455 /* Data */,
+				F8B4665A2C09D8E900DFD455 /* Ventium */,
+				F8B4666B2C09D8EA00DFD455 /* VentiumTests */,
+				F8B466752C09D8EB00DFD455 /* VentiumUITests */,
+				F8B466592C09D8E900DFD455 /* Products */,
+				F8B466D82C0A66CD00DFD455 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		B55D75C72916E69400ABF6E0 /* Products */ = {
+		F8B466592C09D8E900DFD455 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B55D75C62916E69400ABF6E0 /* Ventium.app */,
-				B55D75D62916E69600ABF6E0 /* VentiumTests.xctest */,
+				F8B466582C09D8E900DFD455 /* Ventium.app */,
+				F8B466682C09D8EA00DFD455 /* VentiumTests.xctest */,
+				F8B466722C09D8EA00DFD455 /* VentiumUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B55D75C82916E69400ABF6E0 /* Ventium */ = {
+		F8B4665A2C09D8E900DFD455 /* Ventium */ = {
 			isa = PBXGroup;
 			children = (
-				F80CE7462BFD5723003C4A97 /* Info.plist */,
-				B55D75C92916E69400ABF6E0 /* VentiumApp.swift */,
-				B58ED91929570C9D00494671 /* CompositionRoot */,
-				B50ACEDB2917D56F000CBB4E /* Coordinators */,
-				B5970BEA29BD047600329172 /* Decorators */,
-				B50ACF0629181875000CBB4E /* Components */,
-				B52292B1299EE54A00C8F74B /* Utilities */,
+				F8B466AD2C0A66B700DFD455 /* Components */,
+				F8B466B72C0A66B700DFD455 /* CompositionRoot */,
+				F8B466A22C0A66B600DFD455 /* Coordinators */,
+				F8B466A82C0A66B700DFD455 /* Decorators */,
+				F8B466A62C0A66B700DFD455 /* Utilities */,
+				F8B466A92C0A66B700DFD455 /* VentiumApp.swift */,
+				F8B4665F2C09D8EA00DFD455 /* Assets.xcassets */,
+				F8B466612C09D8EA00DFD455 /* Preview Content */,
 			);
 			path = Ventium;
 			sourceTree = "<group>";
 		};
-		B55D75D92916E69600ABF6E0 /* VentiumTests */ = {
+		F8B466612C09D8EA00DFD455 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				B56957512947CC7800E83691 /* TestCase.swift */,
+				F8B466622C09D8EA00DFD455 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F8B4666B2C09D8EA00DFD455 /* VentiumTests */ = {
+			isa = PBXGroup;
+			children = (
+				F8B4666C2C09D8EA00DFD455 /* VentiumTests.swift */,
 			);
 			path = VentiumTests;
 			sourceTree = "<group>";
 		};
-		B55D76172916E88200ABF6E0 /* Frameworks */ = {
+		F8B466752C09D8EB00DFD455 /* VentiumUITests */ = {
 			isa = PBXGroup;
 			children = (
-				B5D61D432932C67300669331 /* Core.framework */,
-				B5F285C62920524A0039505F /* Data.framework */,
-				B55D76682916E9B800ABF6E0 /* Data.framework */,
-				B55D76402916E91500ABF6E0 /* Domain.framework */,
-				B55D76182916E88200ABF6E0 /* UI.framework */,
+				F8B466762C09D8EB00DFD455 /* VentiumUITests.swift */,
+				F8B466782C09D8EB00DFD455 /* VentiumUITestsLaunchTests.swift */,
 			);
-			name = Frameworks;
+			path = VentiumUITests;
 			sourceTree = "<group>";
 		};
-		B58ED91929570C9D00494671 /* CompositionRoot */ = {
+		F8B4668C2C0A66B600DFD455 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				B58ED91A29570CB000494671 /* DependencyContainer.swift */,
-				B5DD687C294B7CF000877945 /* Factories */,
-			);
-			path = CompositionRoot;
-			sourceTree = "<group>";
-		};
-		B5970BEA29BD047600329172 /* Decorators */ = {
-			isa = PBXGroup;
-			children = (
-				B5970BEB29BD048500329172 /* NetworkMonitorDecorator.swift */,
-			);
-			path = Decorators;
-			sourceTree = "<group>";
-		};
-		B5DD687C294B7CF000877945 /* Factories */ = {
-			isa = PBXGroup;
-			children = (
-				B5DD687D294B7D8F00877945 /* RootFactory.swift */,
-				B5DD687F294B7D9900877945 /* AuthFactory.swift */,
-				B5DD6881294B7DA300877945 /* TabsFactory.swift */,
-				B5DD6883294B7DAC00877945 /* HomeFactory.swift */,
-				B5DD6885294B7DB600877945 /* SearchFactory.swift */,
-				B5DD6887294B7DC200877945 /* NotificationsFactory.swift */,
-				B5DD6889294B7DCA00877945 /* ProfileFactory.swift */,
-			);
-			path = Factories;
-			sourceTree = "<group>";
-		};
-		B5DD688B294BD31A00877945 /* Root */ = {
-			isa = PBXGroup;
-			children = (
-				B57A858429AAA2B30015BCF0 /* RootCoordinatorEvent.swift */,
-				B50ACEE62917DA94000CBB4E /* RootCoordinator.swift */,
-				B5A05ABD29647C1600937561 /* RootCoordinatorStore.swift */,
-			);
-			path = Root;
-			sourceTree = "<group>";
-		};
-		B5DD688C294BD32000877945 /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				B57D1224293181980007AB04 /* AuthCoordinator.swift */,
-				F83E8F5E2C062C5500B28F84 /* AuthCoordinatorStore.swift */,
+				F8B4668A2C0A66B600DFD455 /* AuthCoordinator.swift */,
+				F8B4668B2C0A66B600DFD455 /* AuthCoordinatorStore.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		B5DD688D294BD32400877945 /* Tabs */ = {
+		F8B4668F2C0A66B600DFD455 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				B57A858829AAA3BE0015BCF0 /* TabsCoordinatorEvent.swift */,
-				B50ACEF9291810AD000CBB4E /* TabsCoordinator.swift */,
-				B5A05ABB29647B1C00937561 /* TabsCoordinatorStore.swift */,
+				F8B4668D2C0A66B600DFD455 /* HomeScene.swift */,
+				F8B4668E2C0A66B600DFD455 /* HomeSceneStore.swift */,
 			);
-			path = Tabs;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
-		B5DD688E294BD32900877945 /* Home */ = {
+		F8B466932C0A66B600DFD455 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B5F17515299AC85200EF924B /* Scenes */,
-				B57A858629AAA3530015BCF0 /* HomeCoordinatorEvent.swift */,
-				B50ACEE82917DA9F000CBB4E /* HomeCoordinator.swift */,
-				B5A05AB929647A4900937561 /* HomeCoordinatorStore.swift */,
+				F8B4668F2C0A66B600DFD455 /* Scenes */,
+				F8B466902C0A66B600DFD455 /* HomeCoordinator.swift */,
+				F8B466912C0A66B600DFD455 /* HomeCoordinatorEvent.swift */,
+				F8B466922C0A66B600DFD455 /* HomeCoordinatorStore.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		B5DD688F294BD33500877945 /* Search */ = {
+		F8B466952C0A66B600DFD455 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				B50ACEEA2917DAA7000CBB4E /* SearchCoordinator.swift */,
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
-		B5DD6890294BD34300877945 /* Notifications */ = {
-			isa = PBXGroup;
-			children = (
-				B50ACEEC2917DAB9000CBB4E /* NotificationsCoordinator.swift */,
+				F8B466942C0A66B600DFD455 /* NotificationsCoordinator.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
 		};
-		B5DD6891294BD34A00877945 /* Profile */ = {
+		F8B466972C0A66B600DFD455 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				B50ACEEE2917DAC0000CBB4E /* ProfileCoordinator.swift */,
+				F8B466962C0A66B600DFD455 /* ProfileCoordinator.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		B5F17515299AC85200EF924B /* Scenes */ = {
+		F8B4669B2C0A66B600DFD455 /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				B5DD6894294BD3BC00877945 /* HomeScene.swift */,
-				B575AFEC29C51607001D88A2 /* HomeSceneStore.swift */,
+				F8B466982C0A66B600DFD455 /* RootCoordinator.swift */,
+				F8B466992C0A66B600DFD455 /* RootCoordinatorEvent.swift */,
+				F8B4669A2C0A66B600DFD455 /* RootCoordinatorStore.swift */,
 			);
-			path = Scenes;
+			path = Root;
+			sourceTree = "<group>";
+		};
+		F8B4669D2C0A66B600DFD455 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F8B4669C2C0A66B600DFD455 /* SearchCoordinator.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		F8B466A12C0A66B600DFD455 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				F8B4669E2C0A66B600DFD455 /* TabsCoordinator.swift */,
+				F8B4669F2C0A66B600DFD455 /* TabsCoordinatorEvent.swift */,
+				F8B466A02C0A66B600DFD455 /* TabsCoordinatorStore.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		F8B466A22C0A66B600DFD455 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				F8B4668C2C0A66B600DFD455 /* Auth */,
+				F8B466932C0A66B600DFD455 /* Home */,
+				F8B466952C0A66B600DFD455 /* Notifications */,
+				F8B466972C0A66B600DFD455 /* Profile */,
+				F8B4669B2C0A66B600DFD455 /* Root */,
+				F8B4669D2C0A66B600DFD455 /* Search */,
+				F8B466A12C0A66B600DFD455 /* Tabs */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		F8B466A62C0A66B700DFD455 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F8B466A32C0A66B700DFD455 /* Channel.swift */,
+				F8B466A42C0A66B700DFD455 /* NetworkMonitor.swift */,
+				F8B466A52C0A66B700DFD455 /* ShakeGesture.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F8B466A82C0A66B700DFD455 /* Decorators */ = {
+			isa = PBXGroup;
+			children = (
+				F8B466A72C0A66B700DFD455 /* NetworkMonitorDecorator.swift */,
+			);
+			path = Decorators;
+			sourceTree = "<group>";
+		};
+		F8B466AD2C0A66B700DFD455 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F8B466AA2C0A66B700DFD455 /* DebugView.swift */,
+				F8B466AB2C0A66B700DFD455 /* IfLetView.swift */,
+				F8B466AC2C0A66B700DFD455 /* PathView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F8B466B52C0A66B700DFD455 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				F8B466AE2C0A66B700DFD455 /* AuthFactory.swift */,
+				F8B466AF2C0A66B700DFD455 /* HomeFactory.swift */,
+				F8B466B02C0A66B700DFD455 /* NotificationsFactory.swift */,
+				F8B466B12C0A66B700DFD455 /* ProfileFactory.swift */,
+				F8B466B22C0A66B700DFD455 /* RootFactory.swift */,
+				F8B466B32C0A66B700DFD455 /* SearchFactory.swift */,
+				F8B466B42C0A66B700DFD455 /* TabsFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		F8B466B72C0A66B700DFD455 /* CompositionRoot */ = {
+			isa = PBXGroup;
+			children = (
+				F8B466B52C0A66B700DFD455 /* Factories */,
+				F8B466B62C0A66B700DFD455 /* DependencyContainer.swift */,
+			);
+			path = CompositionRoot;
+			sourceTree = "<group>";
+		};
+		F8B466D82C0A66CD00DFD455 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B55D75C52916E69400ABF6E0 /* Ventium */ = {
+		F8B466572C09D8E900DFD455 /* Ventium */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B55D75EA2916E69600ABF6E0 /* Build configuration list for PBXNativeTarget "Ventium" */;
+			buildConfigurationList = F8B4667C2C09D8EB00DFD455 /* Build configuration list for PBXNativeTarget "Ventium" */;
 			buildPhases = (
-				B55D75C22916E69400ABF6E0 /* Sources */,
-				B55D75C32916E69400ABF6E0 /* Frameworks */,
-				B55D75C42916E69400ABF6E0 /* Resources */,
-				B50EC3792955055500162314 /* Embed Frameworks */,
+				F8B466542C09D8E900DFD455 /* Sources */,
+				F8B466552C09D8E900DFD455 /* Frameworks */,
+				F8B466562C09D8E900DFD455 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -344,51 +370,76 @@
 			);
 			name = Ventium;
 			packageProductDependencies = (
+				F807F9AF2C0A6C0D00338A6A /* Core */,
+				F807F9B12C0A6C1000338A6A /* Data */,
+				F807F9B32C0A6C1300338A6A /* Domain */,
+				F807F9B52C0A6C1600338A6A /* UI */,
 			);
 			productName = Ventium;
-			productReference = B55D75C62916E69400ABF6E0 /* Ventium.app */;
+			productReference = F8B466582C09D8E900DFD455 /* Ventium.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B55D75D52916E69600ABF6E0 /* VentiumTests */ = {
+		F8B466672C09D8EA00DFD455 /* VentiumTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B55D75ED2916E69600ABF6E0 /* Build configuration list for PBXNativeTarget "VentiumTests" */;
+			buildConfigurationList = F8B4667F2C09D8EB00DFD455 /* Build configuration list for PBXNativeTarget "VentiumTests" */;
 			buildPhases = (
-				B55D75D22916E69600ABF6E0 /* Sources */,
-				B55D75D32916E69600ABF6E0 /* Frameworks */,
-				B55D75D42916E69600ABF6E0 /* Resources */,
+				F8B466642C09D8EA00DFD455 /* Sources */,
+				F8B466652C09D8EA00DFD455 /* Frameworks */,
+				F8B466662C09D8EA00DFD455 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B55D75D82916E69600ABF6E0 /* PBXTargetDependency */,
+				F8B4666A2C09D8EA00DFD455 /* PBXTargetDependency */,
 			);
 			name = VentiumTests;
-			packageProductDependencies = (
-			);
 			productName = VentiumTests;
-			productReference = B55D75D62916E69600ABF6E0 /* VentiumTests.xctest */;
+			productReference = F8B466682C09D8EA00DFD455 /* VentiumTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F8B466712C09D8EA00DFD455 /* VentiumUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8B466822C09D8EB00DFD455 /* Build configuration list for PBXNativeTarget "VentiumUITests" */;
+			buildPhases = (
+				F8B4666E2C09D8EA00DFD455 /* Sources */,
+				F8B4666F2C09D8EA00DFD455 /* Frameworks */,
+				F8B466702C09D8EA00DFD455 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8B466742C09D8EB00DFD455 /* PBXTargetDependency */,
+			);
+			name = VentiumUITests;
+			productName = VentiumUITests;
+			productReference = F8B466722C09D8EA00DFD455 /* VentiumUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		B55D75BE2916E69400ABF6E0 /* Project object */ = {
+		F8B466502C09D8E900DFD455 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
-					B55D75C52916E69400ABF6E0 = {
-						CreatedOnToolsVersion = 14.0.1;
+					F8B466572C09D8E900DFD455 = {
+						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
 					};
-					B55D75D52916E69600ABF6E0 = {
-						CreatedOnToolsVersion = 14.0.1;
-						TestTargetID = B55D75C52916E69400ABF6E0;
+					F8B466672C09D8EA00DFD455 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = F8B466572C09D8E900DFD455;
+					};
+					F8B466712C09D8EA00DFD455 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = F8B466572C09D8E900DFD455;
 					};
 				};
 			};
-			buildConfigurationList = B55D75C12916E69400ABF6E0 /* Build configuration list for PBXProject "Ventium" */;
+			buildConfigurationList = F8B466532C09D8E900DFD455 /* Build configuration list for PBXProject "Ventium" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -396,28 +447,38 @@
 				en,
 				Base,
 			);
-			mainGroup = B55D75BD2916E69400ABF6E0;
+			mainGroup = F8B4664F2C09D8E900DFD455;
 			packageReferences = (
 			);
-			productRefGroup = B55D75C72916E69400ABF6E0 /* Products */;
+			productRefGroup = F8B466592C09D8E900DFD455 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B55D75C52916E69400ABF6E0 /* Ventium */,
-				B55D75D52916E69600ABF6E0 /* VentiumTests */,
+				F8B466572C09D8E900DFD455 /* Ventium */,
+				F8B466672C09D8EA00DFD455 /* VentiumTests */,
+				F8B466712C09D8EA00DFD455 /* VentiumUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B55D75C42916E69400ABF6E0 /* Resources */ = {
+		F8B466562C09D8E900DFD455 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B466632C09D8EA00DFD455 /* Preview Assets.xcassets in Resources */,
+				F8B466602C09D8EA00DFD455 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8B466662C09D8EA00DFD455 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B55D75D42916E69600ABF6E0 /* Resources */ = {
+		F8B466702C09D8EA00DFD455 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -427,68 +488,83 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B55D75C22916E69400ABF6E0 /* Sources */ = {
+		F8B466542C09D8E900DFD455 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5DD6884294B7DAC00877945 /* HomeFactory.swift in Sources */,
-				B50ACEE72917DA94000CBB4E /* RootCoordinator.swift in Sources */,
-				B5970BE129BBB0C900329172 /* NetworkMonitor.swift in Sources */,
-				B58ED91B29570CB000494671 /* DependencyContainer.swift in Sources */,
-				B55D75CA2916E69400ABF6E0 /* VentiumApp.swift in Sources */,
-				B50ACEE92917DA9F000CBB4E /* HomeCoordinator.swift in Sources */,
-				B57D1225293181980007AB04 /* AuthCoordinator.swift in Sources */,
-				B575AFED29C51607001D88A2 /* HomeSceneStore.swift in Sources */,
-				B5DD6880294B7D9900877945 /* AuthFactory.swift in Sources */,
-				B5970BE729BCB95300329172 /* DebugView.swift in Sources */,
-				B5DD687E294B7D8F00877945 /* RootFactory.swift in Sources */,
-				B50ACEEF2917DAC0000CBB4E /* ProfileCoordinator.swift in Sources */,
-				B50ACF0829181884000CBB4E /* IfLetView.swift in Sources */,
-				B5DD6882294B7DA300877945 /* TabsFactory.swift in Sources */,
-				B5A05ABA29647A4900937561 /* HomeCoordinatorStore.swift in Sources */,
-				B5DD6895294BD3BC00877945 /* HomeScene.swift in Sources */,
-				B57A858529AAA2B30015BCF0 /* RootCoordinatorEvent.swift in Sources */,
-				B5970BEC29BD048500329172 /* NetworkMonitorDecorator.swift in Sources */,
-				B5DD6886294B7DB600877945 /* SearchFactory.swift in Sources */,
-				F83E8F5F2C062C5500B28F84 /* AuthCoordinatorStore.swift in Sources */,
-				B538936629A9184E00A99124 /* PathView.swift in Sources */,
-				B50ACEEB2917DAA7000CBB4E /* SearchCoordinator.swift in Sources */,
-				B5DD688A294B7DCA00877945 /* ProfileFactory.swift in Sources */,
-				B50ACEFA291810AD000CBB4E /* TabsCoordinator.swift in Sources */,
-				B5DD6888294B7DC200877945 /* NotificationsFactory.swift in Sources */,
-				B5970BE929BCBD0800329172 /* ShakeGesture.swift in Sources */,
-				B5487C4E299D93790062B67C /* Channel.swift in Sources */,
-				B5A05ABC29647B1C00937561 /* TabsCoordinatorStore.swift in Sources */,
-				B5A05ABE29647C1600937561 /* RootCoordinatorStore.swift in Sources */,
-				B57A858729AAA3530015BCF0 /* HomeCoordinatorEvent.swift in Sources */,
-				B57A858929AAA3BE0015BCF0 /* TabsCoordinatorEvent.swift in Sources */,
-				B50ACEED2917DAB9000CBB4E /* NotificationsCoordinator.swift in Sources */,
+				F8B466C72C0A66B700DFD455 /* TabsCoordinatorStore.swift in Sources */,
+				F8B466CF2C0A66B700DFD455 /* PathView.swift in Sources */,
+				F8B466BD2C0A66B700DFD455 /* HomeCoordinatorEvent.swift in Sources */,
+				F8B466CA2C0A66B700DFD455 /* ShakeGesture.swift in Sources */,
+				F8B466C42C0A66B700DFD455 /* SearchCoordinator.swift in Sources */,
+				F8B466BE2C0A66B700DFD455 /* HomeCoordinatorStore.swift in Sources */,
+				F8B466C82C0A66B700DFD455 /* Channel.swift in Sources */,
+				F8B466C32C0A66B700DFD455 /* RootCoordinatorStore.swift in Sources */,
+				F8B466C12C0A66B700DFD455 /* RootCoordinator.swift in Sources */,
+				F8B466C92C0A66B700DFD455 /* NetworkMonitor.swift in Sources */,
+				F8B466CB2C0A66B700DFD455 /* NetworkMonitorDecorator.swift in Sources */,
+				F8B466CE2C0A66B700DFD455 /* IfLetView.swift in Sources */,
+				F8B466D62C0A66B700DFD455 /* TabsFactory.swift in Sources */,
+				F8B466CD2C0A66B700DFD455 /* DebugView.swift in Sources */,
+				F8B466BA2C0A66B700DFD455 /* HomeScene.swift in Sources */,
+				F8B466B92C0A66B700DFD455 /* AuthCoordinatorStore.swift in Sources */,
+				F8B466D22C0A66B700DFD455 /* NotificationsFactory.swift in Sources */,
+				F8B466D32C0A66B700DFD455 /* ProfileFactory.swift in Sources */,
+				F8B466D02C0A66B700DFD455 /* AuthFactory.swift in Sources */,
+				F8B466BC2C0A66B700DFD455 /* HomeCoordinator.swift in Sources */,
+				F8B466B82C0A66B700DFD455 /* AuthCoordinator.swift in Sources */,
+				F8B466C22C0A66B700DFD455 /* RootCoordinatorEvent.swift in Sources */,
+				F8B466D72C0A66B700DFD455 /* DependencyContainer.swift in Sources */,
+				F8B466CC2C0A66B700DFD455 /* VentiumApp.swift in Sources */,
+				F8B466D52C0A66B700DFD455 /* SearchFactory.swift in Sources */,
+				F8B466C52C0A66B700DFD455 /* TabsCoordinator.swift in Sources */,
+				F8B466BB2C0A66B700DFD455 /* HomeSceneStore.swift in Sources */,
+				F8B466C02C0A66B700DFD455 /* ProfileCoordinator.swift in Sources */,
+				F8B466D12C0A66B700DFD455 /* HomeFactory.swift in Sources */,
+				F8B466D42C0A66B700DFD455 /* RootFactory.swift in Sources */,
+				F8B466BF2C0A66B700DFD455 /* NotificationsCoordinator.swift in Sources */,
+				F8B466C62C0A66B700DFD455 /* TabsCoordinatorEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B55D75D22916E69600ABF6E0 /* Sources */ = {
+		F8B466642C09D8EA00DFD455 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B56957522947CC7800E83691 /* TestCase.swift in Sources */,
+				F8B4666D2C09D8EA00DFD455 /* VentiumTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8B4666E2C09D8EA00DFD455 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B466772C09D8EB00DFD455 /* VentiumUITests.swift in Sources */,
+				F8B466792C09D8EB00DFD455 /* VentiumUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B55D75D82916E69600ABF6E0 /* PBXTargetDependency */ = {
+		F8B4666A2C09D8EA00DFD455 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B55D75C52916E69400ABF6E0 /* Ventium */;
-			targetProxy = B55D75D72916E69600ABF6E0 /* PBXContainerItemProxy */;
+			target = F8B466572C09D8E900DFD455 /* Ventium */;
+			targetProxy = F8B466692C09D8EA00DFD455 /* PBXContainerItemProxy */;
+		};
+		F8B466742C09D8EB00DFD455 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8B466572C09D8E900DFD455 /* Ventium */;
+			targetProxy = F8B466732C09D8EB00DFD455 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		B55D75E82916E69600ABF6E0 /* Debug */ = {
+		F8B4667A2C09D8EB00DFD455 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -521,7 +597,8 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -535,21 +612,22 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_STRICT_CONCURRENCY = complete;
 			};
 			name = Debug;
 		};
-		B55D75E92916E69600ABF6E0 /* Release */ = {
+		F8B4667B2C09D8EB00DFD455 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -582,7 +660,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -590,34 +669,33 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_STRICT_CONCURRENCY = complete;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		B55D75EB2916E69600ABF6E0 /* Debug */ = {
+		F8B4667D2C09D8EB00DFD455 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Ventium/Preview Content\"";
 				DEVELOPMENT_TEAM = L3WXSU62XW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Ventium/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -626,29 +704,29 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hydro1337x.Ventium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		B55D75EC2916E69600ABF6E0 /* Release */ = {
+		F8B4667E2C09D8EB00DFD455 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Ventium/Preview Content\"";
 				DEVELOPMENT_TEAM = L3WXSU62XW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Ventium/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -657,22 +735,21 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hydro1337x.Ventium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_STRICT_CONCURRENCY = minimal;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		B55D75EE2916E69600ABF6E0 /* Debug */ = {
+		F8B466802C09D8EB00DFD455 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = K8WZF48FXW;
+				DEVELOPMENT_TEAM = L3WXSU62XW;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hydro1337x.VentiumTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -683,16 +760,16 @@
 			};
 			name = Debug;
 		};
-		B55D75EF2916E69600ABF6E0 /* Release */ = {
+		F8B466812C09D8EB00DFD455 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = K8WZF48FXW;
+				DEVELOPMENT_TEAM = L3WXSU62XW;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hydro1337x.VentiumTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -700,40 +777,104 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ventium.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Ventium";
+			};
+			name = Release;
+		};
+		F8B466832C09D8EB00DFD455 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L3WXSU62XW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hydro1337x.VentiumUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Ventium;
+			};
+			name = Debug;
+		};
+		F8B466842C09D8EB00DFD455 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L3WXSU62XW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hydro1337x.VentiumUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Ventium;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B55D75C12916E69400ABF6E0 /* Build configuration list for PBXProject "Ventium" */ = {
+		F8B466532C09D8E900DFD455 /* Build configuration list for PBXProject "Ventium" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B55D75E82916E69600ABF6E0 /* Debug */,
-				B55D75E92916E69600ABF6E0 /* Release */,
+				F8B4667A2C09D8EB00DFD455 /* Debug */,
+				F8B4667B2C09D8EB00DFD455 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B55D75EA2916E69600ABF6E0 /* Build configuration list for PBXNativeTarget "Ventium" */ = {
+		F8B4667C2C09D8EB00DFD455 /* Build configuration list for PBXNativeTarget "Ventium" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B55D75EB2916E69600ABF6E0 /* Debug */,
-				B55D75EC2916E69600ABF6E0 /* Release */,
+				F8B4667D2C09D8EB00DFD455 /* Debug */,
+				F8B4667E2C09D8EB00DFD455 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B55D75ED2916E69600ABF6E0 /* Build configuration list for PBXNativeTarget "VentiumTests" */ = {
+		F8B4667F2C09D8EB00DFD455 /* Build configuration list for PBXNativeTarget "VentiumTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B55D75EE2916E69600ABF6E0 /* Debug */,
-				B55D75EF2916E69600ABF6E0 /* Release */,
+				F8B466802C09D8EB00DFD455 /* Debug */,
+				F8B466812C09D8EB00DFD455 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8B466822C09D8EB00DFD455 /* Build configuration list for PBXNativeTarget "VentiumUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8B466832C09D8EB00DFD455 /* Debug */,
+				F8B466842C09D8EB00DFD455 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F807F9AF2C0A6C0D00338A6A /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Core;
+		};
+		F807F9B12C0A6C1000338A6A /* Data */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Data;
+		};
+		F807F9B32C0A6C1300338A6A /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
+		};
+		F807F9B52C0A6C1600338A6A /* UI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = B55D75BE2916E69400ABF6E0 /* Project object */;
+	rootObject = F8B466502C09D8E900DFD455 /* Project object */;
 }
