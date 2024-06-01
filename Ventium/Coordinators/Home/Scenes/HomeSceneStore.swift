@@ -45,8 +45,8 @@ final class HomeSceneStore {
             self?.onPostTap?(item)
         }
         
-        storyListStore.onStoriesFetch = { [storyPagerStore] items in
-            storyPagerStore.setItems(items)
+        storyListStore.onStoriesFetch = { [weak storyPagerStore] items in
+            storyPagerStore?.setItems(items)
         }
         
         storyListStore.onItemTap = { [weak self] item in
@@ -62,12 +62,14 @@ final class HomeSceneStore {
             self?.onStoryPagerDismiss?()
         }
         
-        storyPagerStore.onNextItem = { [storyPagerStore, storyListStore] in
-            storyListStore.setFocusedItem(storyPagerStore.selectedItem)
+        storyPagerStore.onNextItem = { [weak storyPagerStore, weak storyListStore] in
+            guard let storyPagerStore else { return }
+            storyListStore?.setFocusedItem(storyPagerStore.selectedItem)
         }
         
-        storyPagerStore.onPreviousItem = { [storyPagerStore, storyListStore] in
-            storyListStore.setFocusedItem(storyPagerStore.selectedItem)
+        storyPagerStore.onPreviousItem = { [weak storyPagerStore, weak storyListStore] in
+            guard let storyPagerStore else { return }
+            storyListStore?.setFocusedItem(storyPagerStore.selectedItem)
         }
     }
     

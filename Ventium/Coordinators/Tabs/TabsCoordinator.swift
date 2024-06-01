@@ -45,6 +45,7 @@ struct TabsCoordinator: View {
             .toolbarBackground(.visible, for: .tabBar) // This fixes tabBar visibility when side menu is dismissed
         }
         .accentColor(Color(.accent))
+        .onDisappear(perform: store.handleDisappear)
     }
     
     @MainActor

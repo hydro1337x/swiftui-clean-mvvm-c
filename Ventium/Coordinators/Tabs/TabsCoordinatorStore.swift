@@ -53,6 +53,11 @@ final class TabsCoordinatorStore {
         self.tab = tab
     }
     
+    func handleDisappear() {
+        eventsTask?.cancel()
+        
+    }
+    
     private func bind() {
         eventsTask = Task { @MainActor in
             for await event in events {

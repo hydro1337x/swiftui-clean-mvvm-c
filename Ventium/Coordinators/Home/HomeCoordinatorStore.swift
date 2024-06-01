@@ -107,9 +107,9 @@ final class HomeCoordinatorStore {
             self?.isNavigationTitleVisible = false
         }
         
-        store.onHeaderDisappear = { [weak self] in
+        store.onHeaderDisappear = { [weak self, title = store.title] in
             self?.isNavigationBarBackgroundVisible = true
-            self?.showNavigationTitle(store.title)
+            self?.showNavigationTitle(title)
         }
         
         path.append(.details(store))
