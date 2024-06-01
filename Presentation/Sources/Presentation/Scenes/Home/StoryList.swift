@@ -19,7 +19,7 @@ public struct StoryList: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 10) {
                     ForEach(store.stories) { item in
-                        ZStack { // Without wrapping StoryThumbnail in a Z/V/HStack scrolling back won't reload images
+                        ZStack { // Without wrapping StoryThumbnail in a Z/V/HStack scrolling back won't reload images, also both id on ZStack and on StoryThumbnail need to be added so that both image loading and indirect scrolling from StoryPager work
                             StoryThumbnail(
                                 backgroundImageStore: item.backgroundImageStore,
                                 logoImageStore: item.locationImageStore,
@@ -37,6 +37,7 @@ public struct StoryList: View {
                             }
                             .id(item)
                         }
+                        .id(item)
                     }
                 }
                 .padding(.horizontal, 10)

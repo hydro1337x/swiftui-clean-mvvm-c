@@ -14,9 +14,7 @@ import Core
 public final class StoryListStore {
     public private(set) var stories: [StoryViewModel] = [] {
         didSet {
-            if oldValue != stories {
-                onStoriesFetch(stories)
-            }
+            onStoriesFetch(stories)
         }
     }
     private(set) var focusedItem: StoryViewModel?

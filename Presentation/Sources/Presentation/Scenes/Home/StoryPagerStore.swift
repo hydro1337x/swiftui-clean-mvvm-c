@@ -11,7 +11,11 @@ import Foundation
 @Observable
 public final class StoryPagerStore {
     public private(set) var selectedItem: StoryViewModel?
-    private var selectedIndex: Int?
+    private var selectedIndex: Int? {
+        didSet {
+            selectedItem = getItem(for: selectedIndex)
+        }
+    }
     private var items: [StoryViewModel] = []
     
     public var onNextItem: (() -> Void)? = { assertionFailure() }
@@ -25,19 +29,14 @@ public final class StoryPagerStore {
     }
     
     public func selectItem(_ item: StoryViewModel?) {
-        if let item, let selectedIndex = items.firstIndex(where: { $0 == item }) {
-            self.selectedIndex = selectedIndex
-            selectedItem = items[selectedIndex]
-        } else {
-            selectedItem = nil
-        }
+        let index = items.firstIndex(where: { $0 == item })
+        self.selectedIndex = index
     }
     
     public func nextItem() {
         guard let selectedIndex = selectedIndex, selectedIndex < items.count - 1 else { return }
         
         self.selectedIndex = selectedIndex + 1
-        selectedItem = getItem(for: selectedIndex)
         
         onNextItem?()
     }
@@ -46,13 +45,12 @@ public final class StoryPagerStore {
         guard let selectedIndex = selectedIndex, selectedIndex > 0 else { return }
         
         self.selectedIndex = selectedIndex - 1
-        selectedItem = getItem(for: selectedIndex)
         
         onPreviousItem?()
     }
     
     public func dragEnded() {
-        selectItem(nil)
+        selectedIndex = nil
         onDragEnded?()
     }
     
