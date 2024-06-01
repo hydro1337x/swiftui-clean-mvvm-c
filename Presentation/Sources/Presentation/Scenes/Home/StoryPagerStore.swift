@@ -7,11 +7,12 @@
 
 import Foundation
 
+@MainActor
 @Observable
 public final class StoryPagerStore {
-    public private(set) var items: [StoryViewModel] = []
     public private(set) var selectedItem: StoryViewModel?
     private var selectedIndex: Int?
+    private var items: [StoryViewModel] = []
     
     public var onNextItem: (() -> Void)? = { assertionFailure() }
     public var onPreviousItem: (() -> Void)? = { assertionFailure() }

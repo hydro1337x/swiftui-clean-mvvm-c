@@ -40,7 +40,7 @@ public struct HomeFeed: View {
                         locationName: item.locationName,
                         postName: item.name,
                         posterStore: item.posterStore,
-                        avatarURL: item.avatarURL,
+                        avatarStore: item.avatarStore,
                         tags: item.tags
                     )
                     .padding(.horizontal, 10)

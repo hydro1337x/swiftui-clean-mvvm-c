@@ -64,12 +64,12 @@ public struct PostDetailsView: View {
     
     var header: some View {
         ZStack(alignment: .bottom) {
-            AsyncImageView_Old(url: store.posterURL)
+            AsyncImageView(store: store.posterStore)
             
             LinearGradient(colors: [.clear, Color(.background)], startPoint: .center, endPoint: .bottom)
             
             VStack(spacing: 10) {
-                AsyncImageView_Old(url: store.logoURL)
+                AsyncImageView(store: store.logoStore)
                     .frame(width: 50, height: 50)
                     .cornerRadius(25)
                 

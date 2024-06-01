@@ -45,6 +45,7 @@ struct HomeScene: View {
         }
     }
     
+    @MainActor
     func makeStoryPagerConditionally() -> some View {
         Group {
             if store.storyPagerStore.selectedItem != nil {

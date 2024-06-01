@@ -19,22 +19,24 @@ public struct StoryList: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 10) {
                     ForEach(store.stories) { item in
-                        StoryThumbnail(
-                            backgroundURL: item.backgroundURL,
-                            logoURL: item.locationURL,
-                            title: item.locationName
-                        )
-                        .frame(width: 125, height: 175)
-                        .cornerRadius(10)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color(.accent), lineWidth: 2)
-                        )
-                        .onAppear { store.itemAppeared(item) }
-                        .onTapGesture {
-                            store.itemTapped(item)
+                        ZStack { // Without wrapping StoryThumbnail in a Z/V/HStack scrolling back won't reload images
+                            StoryThumbnail(
+                                backgroundImageStore: item.backgroundImageStore,
+                                logoImageStore: item.locationImageStore,
+                                title: item.locationName
+                            )
+                            .frame(width: 125, height: 175)
+                            .cornerRadius(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color(.accent), lineWidth: 2)
+                            )
+                            .onAppear { store.itemAppeared(item) }
+                            .onTapGesture {
+                                store.itemTapped(item)
+                            }
+                            .id(item)
                         }
-                        .id(item)
                     }
                 }
                 .padding(.horizontal, 10)

@@ -9,7 +9,7 @@ import Foundation
 
 public struct StoryViewModel: Identifiable, Hashable {
     public let id: String
-    public let backgroundURL: URL
+    public let backgroundImageStore: AsyncImageViewStore
     let locationName: String
-    let locationURL: URL
+    let locationImageStore: AsyncImageViewStore
 }

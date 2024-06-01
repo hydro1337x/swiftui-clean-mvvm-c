@@ -9,16 +9,17 @@ import Foundation
 import Domain
 
 public enum StoryPresenter {
-    public static func map(_ input: Story) -> StoryViewModel {
-        let mockURL = URL(string: "localhost:3000")!
-        let locationURL = input.location.medias.first(where: \.isFavorite)?.url ?? mockURL
-        let backgroundURL = input.medias.first(where: \.isFavorite)?.url ?? mockURL
+    public static func map(_ story: Story, makeAsyncImageViewStore: (String) -> AsyncImageViewStore) -> StoryViewModel {
+        let locationURL = story.location.medias.first(where: \.isFavorite)!.url.absoluteString
+        let locationImageStore = makeAsyncImageViewStore(locationURL)
+        let backgroundURL = story.medias.first(where: \.isFavorite)!.url.absoluteString
+        let backgroundImageStore = makeAsyncImageViewStore(backgroundURL)
         
         return StoryViewModel(
-            id: input.id,
-            backgroundURL: backgroundURL,
-            locationName: input.location.name,
-            locationURL: locationURL
+            id: story.id,
+            backgroundImageStore: backgroundImageStore,
+            locationName: story.location.name,
+            locationImageStore: locationImageStore
         )
     }
 }

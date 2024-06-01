@@ -18,7 +18,9 @@ public struct StoryPager: View {
     public var body: some View {
         GeometryReader { proxy in
             ZStack {
-                AsyncImageView_Old(url: store.selectedItem?.backgroundURL)
+                if let imageStore = store.selectedItem?.backgroundImageStore {
+                    AsyncImageView(store: imageStore)
+                }
                 
                 HStack {
                     Button(action: store.previousItem, label: { Color.clear })
@@ -26,6 +28,7 @@ public struct StoryPager: View {
                 }
             }
             .frame(width: proxy.size.width)
+            .background(Color(.background))
             .clipped()
             .offset(localStore.offset)
             .scaleEffect(localStore.scale)

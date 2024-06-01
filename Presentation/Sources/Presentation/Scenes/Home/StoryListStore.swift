@@ -26,14 +26,17 @@ public final class StoryListStore {
     public var onItemTap: ((StoryViewModel) -> Void)? = { _ in assertionFailure("StoryListStore.onItemTap is not implemented.")}
     
     private let fetchStoriesUseCase: any UseCase<FetchStoriesInput, [Story]>
+    private let makeAsyncImageViewStore: (String) -> AsyncImageViewStore
     
     private(set) var initialTask: Task<Void, Error>?
     private(set) var consecutiveTask: Task<Void, Error>?
     
     public init(
-        fetchStoriesUseCase: any UseCase<FetchStoriesInput, [Story]>
+        fetchStoriesUseCase: any UseCase<FetchStoriesInput, [Story]>,
+        makeAsyncImageViewStore: @escaping (String) -> AsyncImageViewStore
     ) {
         self.fetchStoriesUseCase = fetchStoriesUseCase
+        self.makeAsyncImageViewStore = makeAsyncImageViewStore
     }
     
     public func setFocusedItem(_ item: StoryViewModel?) {
@@ -96,7 +99,9 @@ public final class StoryListStore {
         
         switch result {
         case .success(let items):
-            let viewModels = ListMapper.map(items, mapper: StoryPresenter.map)
+            let viewModels = ListMapper.map(items, mapper: { story in
+                StoryPresenter.map(story, makeAsyncImageViewStore: makeAsyncImageViewStore)
+            })
             return .success(viewModels)
         case .failure(let error):
             return .failure(error)

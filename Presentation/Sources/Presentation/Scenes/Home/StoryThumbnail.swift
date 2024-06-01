@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct StoryThumbnail: View {
-    let backgroundURL: URL
-    let logoURL: URL
+    let backgroundImageStore: AsyncImageViewStore
+    let logoImageStore: AsyncImageViewStore
     let title: String
     
     var body: some View {
         ZStack(alignment: .bottom) {
             GeometryReader { proxy in
-                AsyncImageView_Old(url: backgroundURL)
+                AsyncImageView(store: backgroundImageStore)
                     .frame(width: proxy.size.width, height: proxy.size.height, alignment: .center)
             }
             
             LinearGradient(colors: [.clear, Color(.background)], startPoint: .top, endPoint: .bottom)
             
             VStack {
-                AsyncImageView_Old(url: logoURL)
+                AsyncImageView(store: logoImageStore)
                     .frame(width: 50, height: 50)
                     .cornerRadius(25)
                 

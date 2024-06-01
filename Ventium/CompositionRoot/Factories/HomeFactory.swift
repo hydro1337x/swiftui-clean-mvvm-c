@@ -30,7 +30,8 @@ struct HomeFactory {
         )
         let storyPagerStore = StoryPagerStore()
         let storyListStore = StoryListStore(
-            fetchStoriesUseCase: FetchStoriesUseCaseLoggingDecorator(decoratee: fetchStoriesUseCase).retry(count: 3).fallback(fetchStoriesUseCase)
+            fetchStoriesUseCase: FetchStoriesUseCaseLoggingDecorator(decoratee: fetchStoriesUseCase),
+            makeAsyncImageViewStore: makeAsyncImageViewStore
         )
         let topSheetStore = FilterTopSheetStore()
         
@@ -44,8 +45,8 @@ struct HomeFactory {
     
     func makePostDetailsScene(with viewModel: PostViewModel) -> PostDetailsViewStore {
         return PostDetailsViewStore(
-            posterURL: URL(string: "www.google.com")!/*viewModel.posterURL*/,
-            logoURL: viewModel.avatarURL,
+            posterStore: viewModel.posterStore,
+            logoStore: viewModel.avatarStore,
             title: viewModel.name,
             description: viewModel.description ?? ""
         )
