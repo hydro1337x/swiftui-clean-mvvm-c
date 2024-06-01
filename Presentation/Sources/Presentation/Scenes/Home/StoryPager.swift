@@ -20,6 +20,7 @@ public struct StoryPager: View {
             ZStack {
                 if let imageStore = store.selectedItem?.backgroundImageStore {
                     AsyncImageView(store: imageStore)
+                        .id(imageStore)
                 }
                 
                 HStack {
