@@ -15,7 +15,8 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../Domain"),
-        .package(path: "../Core")
+        .package(path: "../Core"),
+        .package(url: "https://github.com/pointfreeco/swift-concurrency-extras", exact: "1.1.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -33,6 +34,10 @@ let package = Package(
         ),
         .testTarget(
             name: "PresentationTests",
-            dependencies: ["Presentation"]),
+            dependencies: [
+                .target(name: "Presentation"),
+                .product(name: "ConcurrencyExtras", package: "swift-concurrency-extras")
+            ]
+        ),
     ]
 )

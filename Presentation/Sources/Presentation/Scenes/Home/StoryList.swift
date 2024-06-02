@@ -48,7 +48,7 @@ public struct StoryList: View {
                 proxy.scrollTo(item)
             }
         }
-        .onDisappear(perform: store.disappear)
+        .onDisappear(perform: store.handleOnDisappear)
     }
 }
 

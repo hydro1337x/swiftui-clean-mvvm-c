@@ -38,7 +38,7 @@ final class HomeSceneStore {
     
     private func bind() {
         homeFeedStore.onRefresh = { [storyListStore] in
-            await storyListStore.refresh()
+            await storyListStore.handleRefresh()
         }
         
         homeFeedStore.onItemSelection = { [weak self] item in
@@ -78,7 +78,7 @@ final class HomeSceneStore {
     }
     
     func onAppear() {
-        storyListStore.appear()
+        storyListStore.handleOnAppear()
         topSheetStore.handleInitialFilter()
     }
 }

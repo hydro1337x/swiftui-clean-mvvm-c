@@ -44,7 +44,7 @@ public final class StoryListStore {
         itemAppeared(item)
     }
     
-    public func appear() {
+    public func handleOnAppear() {
         initialTask?.cancel()
         initialTask = Task { @MainActor in
             isLoading = true
@@ -53,7 +53,7 @@ public final class StoryListStore {
         }
     }
     
-    func disappear() {
+    func handleOnDisappear() {
         initialTask?.cancel()
         consecutiveTask?.cancel()
     }
@@ -70,7 +70,7 @@ public final class StoryListStore {
     }
     
     @MainActor
-    public func refresh() async {
+    public func handleRefresh() async {
         let result = await fetchStories(isInitial: true)
         await handleState(result)
         setFocusedItem(stories.first)
