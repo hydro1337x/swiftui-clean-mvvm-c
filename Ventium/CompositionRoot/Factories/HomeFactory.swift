@@ -18,9 +18,9 @@ import Core
 
 @MainActor
 struct HomeFactory {
-    let fetchPostsUseCase: any UseCase<FetchPostsInput, [Post]>
-    let fetchStoriesUseCase: any UseCase<FetchStoriesInput, [Story]>
-    let fetchImageUseCase: any UseCase<String, Data>
+    let fetchPostsUseCase: FetchPostsUseCase
+    let fetchStoriesUseCase: FetchStoriesUseCase
+    let fetchImageUseCase: FetchImageUseCase
     let channel: Channel
     
     func makeHomeScene() -> HomeSceneStore {
@@ -30,7 +30,7 @@ struct HomeFactory {
         )
         let storyPagerStore = StoryPagerStore()
         let storyListStore = StoryListStore(
-            fetchStoriesUseCase: FetchStoriesUseCaseLoggingDecorator(decoratee: fetchStoriesUseCase),
+            fetchStoriesUseCase: fetchStoriesUseCase.loggable(),
             makeAsyncImageViewStore: makeAsyncImageViewStore
         )
         let topSheetStore = FilterTopSheetStore()
@@ -54,7 +54,7 @@ struct HomeFactory {
     
     private func makeAsyncImageViewStore(with url: String) -> AsyncImageViewStore {
         AsyncImageViewStore {
-            await fetchImageUseCase(url)
+            await fetchImageUseCase.execute(url)
         }
     }
 }

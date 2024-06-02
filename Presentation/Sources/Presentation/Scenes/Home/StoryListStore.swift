@@ -23,14 +23,14 @@ public final class StoryListStore {
     public var onStoriesFetch: ([StoryViewModel]) -> Void = { _ in assertionFailure("StoryListStore.onStoriesFetch is not implemented.") }
     public var onItemTap: ((StoryViewModel) -> Void)? = { _ in assertionFailure("StoryListStore.onItemTap is not implemented.")}
     
-    private let fetchStoriesUseCase: any UseCase<FetchStoriesInput, [Story]>
+    private let fetchStoriesUseCase: FetchStoriesUseCase
     private let makeAsyncImageViewStore: (String) -> AsyncImageViewStore
     
     private(set) var initialTask: Task<Void, Error>?
     private(set) var consecutiveTask: Task<Void, Error>?
     
     public init(
-        fetchStoriesUseCase: any UseCase<FetchStoriesInput, [Story]>,
+        fetchStoriesUseCase: FetchStoriesUseCase,
         makeAsyncImageViewStore: @escaping (String) -> AsyncImageViewStore
     ) {
         self.fetchStoriesUseCase = fetchStoriesUseCase
@@ -93,7 +93,7 @@ public final class StoryListStore {
     
     private func fetchStories(isInitial: Bool) async -> Result<[StoryViewModel], Error> {
         let input = FetchStoriesInput(isInitial: isInitial)
-        let result = await fetchStoriesUseCase(input)
+        let result = await fetchStoriesUseCase.execute(input)
         
         switch result {
         case .success(let items):

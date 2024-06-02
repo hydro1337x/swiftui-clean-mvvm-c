@@ -25,11 +25,11 @@ public final class HomeFeedStore {
     private(set) var initialTask: Task<Void, Error>?
     private(set) var consecutiveTask: Task<Void, Error>?
     
-    private let fetchPostsUseCase: any UseCase<FetchPostsInput, [Post]>
+    private let fetchPostsUseCase: FetchPostsUseCase
     private let makeAsyncImageViewStore: (String) -> AsyncImageViewStore
     
     public init(
-        fetchPostsUseCase: any UseCase<FetchPostsInput, [Post]>,
+        fetchPostsUseCase: FetchPostsUseCase,
         makeAsyncImageViewStore: @escaping (String) -> AsyncImageViewStore
     ) {
         self.fetchPostsUseCase = fetchPostsUseCase
@@ -84,7 +84,7 @@ public final class HomeFeedStore {
     
     private func fetchPosts(isInitial: Bool, filter: PostFilter) async -> Result<[PostViewModel], Error> {
         let input = FetchPostsInput(isInitial: isInitial, filter: filter)
-        let result = await fetchPostsUseCase(input)
+        let result = await fetchPostsUseCase.execute(input)
         
         switch result {
         case .success(let items):

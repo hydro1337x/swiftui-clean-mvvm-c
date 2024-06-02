@@ -17,29 +17,29 @@ public struct FetchPostsInput: Sendable {
     }
 }
 
-public struct ConcreteFetchPostsUseCase: UseCase  {
-    private let key = "happens_at_date"
-    private let calendar = Calendar.current
-    private let formatter: DateFormatter = {
+public struct FetchPostsUseCase {
+    public let execute: (FetchPostsInput) async -> Result<[Post], Error>
+}
+
+public extension FetchPostsUseCase {
+    static private let key = "happens_at_date"
+    static private let calendar = Calendar.current
+    static private let formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
     
-    private let repository: FetchPostsRepository
-    
-    public init(repository: FetchPostsRepository) {
-        self.repository = repository
+    static func live(repository: FetchPostsRepository) -> Self {
+        .init { input in
+            let filters = makeInput(for: input.filter)
+            let request = FetchPostsRequest(isInitial: input.isInitial, filters: filters)
+            
+            return await repository.fetch(request)
+        }
     }
     
-    public func callAsFunction(_ input: FetchPostsInput) async -> Result<[Post], Error> {
-        let filters = makeInput(for: input.filter)
-        let request = FetchPostsRequest(isInitial: input.isInitial, filters: filters)
-        
-        return await repository.fetch(request)
-    }
-    
-    private func makeInput(for type: PostFilter) -> [FilterInput] {
+    static private func makeInput(for type: PostFilter) -> [FilterInput] {
         switch type {
         case .today:
             return makeTodayFilter()
@@ -52,26 +52,26 @@ public struct ConcreteFetchPostsUseCase: UseCase  {
         }
     }
     
-    private func makeTodayFilter() -> [FilterInput] {
+    static private func makeTodayFilter() -> [FilterInput] {
         let date = Date.now
         let dateString = formatter.string(from: date)
         let input = FilterInput(operator: .equal, key: key, value: dateString)
         return [input]
     }
     
-    private func makeThisMonthFilter() -> [FilterInput] {
+    static private func makeThisMonthFilter() -> [FilterInput] {
         let date = Date.now
         return makeMonthFilter(for: date)
     }
     
-    private func makeNextMonthFilter() -> [FilterInput] {
+    static private func makeNextMonthFilter() -> [FilterInput] {
         let date = Date.now
         guard let dateInNextMonth = Calendar.current.date(byAdding: .month, value: 1, to: date) else { return [] }
         
         return makeMonthFilter(for: dateInNextMonth)
     }
     
-    private func makeMonthFilter(for date: Date) -> [FilterInput] {
+    static private func makeMonthFilter(for date: Date) -> [FilterInput] {
         let interval = calendar.dateInterval(of: .month, for: date)
         
         guard let interval else { return [] }
@@ -86,7 +86,7 @@ public struct ConcreteFetchPostsUseCase: UseCase  {
     }
     
     // TODO: - Remove this, only for testing purposes
-    private func makeAllFilter() -> [FilterInput] {
+    static private func makeAllFilter() -> [FilterInput] {
         let date = formatter.string(from: Date.now)
         let input = FilterInput(operator: .lessThanOrEqual, key: key, value: date)
         

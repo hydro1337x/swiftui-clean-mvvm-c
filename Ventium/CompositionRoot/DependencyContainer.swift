@@ -48,14 +48,14 @@ final class DependencyContainer {
     
     let fakeRepository = FakeRepository()
     
-    var fetchPostsUseCase: any UseCase<FetchPostsInput, [Post]> {
-        ConcreteFetchPostsUseCase(repository: fakeRepository)
+    var fetchPostsUseCase: FetchPostsUseCase {
+        FetchPostsUseCase.live(repository: fakeRepository)
     }
-    var fetchStorieUseCase: any FetchStoriesUseCase {
-        ConcreteFetchStoriesUseCase(repository: fakeRepository)
+    var fetchStorieUseCase: FetchStoriesUseCase {
+        FetchStoriesUseCase.live(repository: fakeRepository)
     }
-    var fetchImageUseCase: any FetchImageUseCase {
-        ConcreteFetchImageUseCase(repository: fetchImageRepository)
+    var fetchImageUseCase: FetchImageUseCase {
+        FetchImageUseCase.live(repository: fetchImageRepository)
     }
     
     var profileFactory: ProfileFactory { ProfileFactory() }

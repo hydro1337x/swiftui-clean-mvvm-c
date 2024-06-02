@@ -7,9 +7,6 @@
 
 import Foundation
 
-// TODO: - This might be possible in Swift 5.9
-public typealias FetchStoriesUseCase = UseCase<FetchStoriesInput, [Story]>
-
 public struct FetchStoriesInput: Sendable {
     public let isInitial: Bool
     
@@ -18,27 +15,23 @@ public struct FetchStoriesInput: Sendable {
     }
 }
 
-public struct ConcreteFetchStoriesUseCase: UseCase {
-    private let repository: FetchStoriesRepository
-    
-    public init(repository: FetchStoriesRepository) {
-        self.repository = repository
-    }
-    
-    public func callAsFunction(_ input: FetchStoriesInput) async -> Result<[Story], Error> {
-        await repository.fetch(input)
+public struct FetchStoriesUseCase {
+    public let execute: (FetchStoriesInput) async -> Result<[Story], Error>
+}
+
+public extension FetchStoriesUseCase {
+    static func live(repository: FetchStoriesRepository) -> Self {
+        .init { input in
+            await repository.fetch(input)
+        }
     }
 }
 
-public struct FetchStoriesUseCaseLoggingDecorator: UseCase {
-    private let decoratee: any UseCase<FetchStoriesInput, [Story]>
-    
-    public init(decoratee: any UseCase<FetchStoriesInput, [Story]>) {
-        self.decoratee = decoratee
-    }
-    
-    public func callAsFunction(_ input: FetchStoriesInput) async -> Result<[Story], Error> {
-        print("LOGGED")
-        return await decoratee.callAsFunction(input)
+public extension FetchStoriesUseCase {
+    func loggable() -> Self {
+        .init { input in
+            print("LOGGED BEFORE")
+            return await self.execute(input)
+        }
     }
 }
