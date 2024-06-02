@@ -42,7 +42,7 @@ public final class HomeFeedStore {
             guard item.id == posts.last?.id, !isLoading else { return }
             isLoading = true
             let result = await fetchPosts(isInitial: false, filter: filter)
-            await handleState(result)
+            await mutateState(result)
         }
     }
     
@@ -50,7 +50,7 @@ public final class HomeFeedStore {
         async let fetchPosts = fetchPosts(isInitial: true, filter: filter)
         async let refresh: Void? = onRefresh?()
         let (_, postsResult) = await (refresh, fetchPosts)
-        await handleState(postsResult)
+        await mutateState(postsResult)
     }
     
     public func filterChanged(_ filter: PostFilter) {
@@ -59,7 +59,7 @@ public final class HomeFeedStore {
         initialTask = Task { @MainActor in
             isLoading = true
             let result = await fetchPosts(isInitial: true, filter: filter)
-            await handleState(result)
+            await mutateState(result)
         }
     }
     
@@ -72,7 +72,7 @@ public final class HomeFeedStore {
         consecutiveTask?.cancel()
     }
     
-    private func handleState(_ result: Result<[PostViewModel], Error>) async {
+    private func mutateState(_ result: Result<[PostViewModel], Error>) async {
         switch result {
         case .success(let newPosts):
             isLoading = false

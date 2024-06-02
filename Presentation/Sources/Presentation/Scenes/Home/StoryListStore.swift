@@ -49,7 +49,7 @@ public final class StoryListStore {
         initialTask = Task { @MainActor in
             isLoading = true
             let result = await fetchStories(isInitial: true)
-            await handleState(result)
+            await mutateState(result)
         }
     }
     
@@ -65,14 +65,13 @@ public final class StoryListStore {
         consecutiveTask = Task { @MainActor in
             isLoading = true
             let result = await fetchStories(isInitial: false)
-            await handleState(result)
+            await mutateState(result)
         }
     }
     
-    @MainActor
     public func handleRefresh() async {
         let result = await fetchStories(isInitial: true)
-        await handleState(result)
+        await mutateState(result)
         setFocusedItem(stories.first)
     }
     
@@ -80,8 +79,7 @@ public final class StoryListStore {
         onItemTap?(item)
     }
     
-    @MainActor
-    private func handleState(_ result: Result<[StoryViewModel], Error>) async {
+    private func mutateState(_ result: Result<[StoryViewModel], Error>) async {
         switch result {
         case .success(let items):
             isLoading = false
