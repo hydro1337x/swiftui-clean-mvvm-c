@@ -19,8 +19,8 @@ public final class HomeFeedStore {
         posts.isEmpty
     }
     
-    public var onItemSelection: ((PostViewModel) -> Void)? = { _ in assertionFailure("HomeFeedStore.onItemSelection is not implemented.") }
-    public var onRefresh: (@Sendable () async -> Void)? = { assertionFailure("HomeFeedStore.onRefresh is not implemented.") }
+    public var onItemSelected: (PostViewModel) -> Void = unimplemented()
+    public var onRefresh: () async -> Void = unimplemented()
     
     private(set) var initialTask: Task<Void, Error>?
     private(set) var consecutiveTask: Task<Void, Error>?
@@ -36,7 +36,7 @@ public final class HomeFeedStore {
         self.makeAsyncImageViewStore = makeAsyncImageViewStore
     }
     
-    public func itemAppeared(_ item: PostViewModel) {
+    public func handleItemAppeared(_ item: PostViewModel) {
         consecutiveTask?.cancel()
         consecutiveTask = Task { @MainActor in
             guard item.id == posts.last?.id, !isLoading else { return }
@@ -46,14 +46,14 @@ public final class HomeFeedStore {
         }
     }
     
-    public func refresh() async {
+    public func handleRefresh() async {
         async let fetchPosts = fetchPosts(isInitial: true, filter: filter)
-        async let refresh: Void? = onRefresh?()
+        async let refresh: Void = onRefresh()
         let (_, postsResult) = await (refresh, fetchPosts)
         await mutateState(postsResult)
     }
     
-    public func filterChanged(_ filter: PostFilter) {
+    public func handleFilterChanged(_ filter: PostFilter) {
         self.filter = filter
         initialTask?.cancel()
         initialTask = Task { @MainActor in
@@ -63,11 +63,11 @@ public final class HomeFeedStore {
         }
     }
     
-    public func itemSelected(_ item: PostViewModel) {
-        onItemSelection?(item)
+    public func handleItemSelected(_ item: PostViewModel) {
+        onItemSelected(item)
     }
     
-    public func disappear() {
+    public func handleOnDisappear() {
         initialTask?.cancel()
         consecutiveTask?.cancel()
     }

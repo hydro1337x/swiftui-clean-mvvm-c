@@ -20,8 +20,8 @@ public final class StoryListStore {
     private(set) var focusedItem: StoryViewModel?
     private(set) var isLoading: Bool = false
     
-    public var onStoriesFetch: ([StoryViewModel]) -> Void = { _ in assertionFailure("StoryListStore.onStoriesFetch is not implemented.") }
-    public var onItemTap: ((StoryViewModel) -> Void)? = { _ in assertionFailure("StoryListStore.onItemTap is not implemented.")}
+    public var onStoriesFetch: ([StoryViewModel]) -> Void = unimplemented()
+    public var onItemTap: (StoryViewModel) -> Void = unimplemented()
     
     private let fetchStoriesUseCase: FetchStoriesUseCase
     private let makeAsyncImageViewStore: (String) -> AsyncImageViewStore
@@ -41,7 +41,7 @@ public final class StoryListStore {
         guard let item else { return }
         
         focusedItem = item
-        itemAppeared(item)
+        handleItemAppeared(item)
     }
     
     public func handleOnAppear() {
@@ -53,12 +53,7 @@ public final class StoryListStore {
         }
     }
     
-    func handleOnDisappear() {
-        initialTask?.cancel()
-        consecutiveTask?.cancel()
-    }
-    
-    public func itemAppeared(_ item: StoryViewModel) {
+    public func handleItemAppeared(_ item: StoryViewModel) {
         consecutiveTask?.cancel()
         guard item.id == stories.last?.id, !isLoading else { return }
         
@@ -75,8 +70,13 @@ public final class StoryListStore {
         setFocusedItem(stories.first)
     }
     
-    func itemTapped(_ item: StoryViewModel) {
-        onItemTap?(item)
+    func handleOnDisappear() {
+        initialTask?.cancel()
+        consecutiveTask?.cancel()
+    }
+    
+    func handleItemTapped(_ item: StoryViewModel) {
+        onItemTap(item)
     }
     
     private func mutateState(_ result: Result<[StoryViewModel], Error>) async {

@@ -13,7 +13,8 @@ import Core
 @MainActor
 struct AuthFactory {
     func makeLoginScene() -> LoginViewStore {
-        return LoginViewStore()
+        let store = LoginViewStore()
+        return store
     }
     
     func makeRegistrationScene() {}
