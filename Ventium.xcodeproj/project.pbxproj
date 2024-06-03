@@ -26,7 +26,6 @@
 		F8B466BF2C0A66B700DFD455 /* NotificationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466942C0A66B600DFD455 /* NotificationsCoordinator.swift */; };
 		F8B466C02C0A66B700DFD455 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466962C0A66B600DFD455 /* ProfileCoordinator.swift */; };
 		F8B466C12C0A66B700DFD455 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466982C0A66B600DFD455 /* RootCoordinator.swift */; };
-		F8B466C22C0A66B700DFD455 /* RootCoordinatorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B466992C0A66B600DFD455 /* RootCoordinatorEvent.swift */; };
 		F8B466C32C0A66B700DFD455 /* RootCoordinatorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4669A2C0A66B600DFD455 /* RootCoordinatorStore.swift */; };
 		F8B466C42C0A66B700DFD455 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4669C2C0A66B600DFD455 /* SearchCoordinator.swift */; };
 		F8B466C52C0A66B700DFD455 /* TabsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4669E2C0A66B600DFD455 /* TabsCoordinator.swift */; };
@@ -90,7 +89,6 @@
 		F8B466942C0A66B600DFD455 /* NotificationsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsCoordinator.swift; sourceTree = "<group>"; };
 		F8B466962C0A66B600DFD455 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		F8B466982C0A66B600DFD455 /* RootCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
-		F8B466992C0A66B600DFD455 /* RootCoordinatorEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCoordinatorEvent.swift; sourceTree = "<group>"; };
 		F8B4669A2C0A66B600DFD455 /* RootCoordinatorStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCoordinatorStore.swift; sourceTree = "<group>"; };
 		F8B4669C2C0A66B600DFD455 /* SearchCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
 		F8B4669E2C0A66B600DFD455 /* TabsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsCoordinator.swift; sourceTree = "<group>"; };
@@ -257,7 +255,6 @@
 			isa = PBXGroup;
 			children = (
 				F8B466982C0A66B600DFD455 /* RootCoordinator.swift */,
-				F8B466992C0A66B600DFD455 /* RootCoordinatorEvent.swift */,
 				F8B4669A2C0A66B600DFD455 /* RootCoordinatorStore.swift */,
 			);
 			path = Root;
@@ -340,8 +337,8 @@
 		F8B466B72C0A66B700DFD455 /* CompositionRoot */ = {
 			isa = PBXGroup;
 			children = (
-				F8B466B52C0A66B700DFD455 /* Factories */,
 				F8B466B62C0A66B700DFD455 /* DependencyContainer.swift */,
+				F8B466B52C0A66B700DFD455 /* Factories */,
 			);
 			path = CompositionRoot;
 			sourceTree = "<group>";
@@ -513,7 +510,6 @@
 				F8B466D02C0A66B700DFD455 /* AuthFactory.swift in Sources */,
 				F8B466BC2C0A66B700DFD455 /* HomeCoordinator.swift in Sources */,
 				F8B466B82C0A66B700DFD455 /* AuthCoordinator.swift in Sources */,
-				F8B466C22C0A66B700DFD455 /* RootCoordinatorEvent.swift in Sources */,
 				F8B466D72C0A66B700DFD455 /* DependencyContainer.swift in Sources */,
 				F8B466CC2C0A66B700DFD455 /* VentiumApp.swift in Sources */,
 				F8B466D52C0A66B700DFD455 /* SearchFactory.swift in Sources */,

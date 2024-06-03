@@ -5,6 +5,7 @@
 //  Created by Benjamin Macanovic on 26.05.2024..
 //
 
+import Core
 import Foundation
 
 @Observable
@@ -17,9 +18,9 @@ public final class PostDetailsViewStore {
     let text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum commodo tristique felis, vehicula semper tortor volutpat vitae. Suspendisse bibendum nisi at dignissim lacinia. Suspendisse in convallis quam, id viverra urna. Duis non sem suscipit, lobortis sem vel, interdum nibh. Maecenas ullamcorper condimentum lectus, sed accumsan orci dignissim pretium. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices ... "
     
     
-    public var onHeaderDisappear: (() -> Void)? = { assertionFailure("PostDetailsViewStore.onHeaderDisappear is not implemented.") }
-    public var onHeaderAppear: (() -> Void)? = { assertionFailure("PostDetailsViewStore.onHeaderAppear is not implemented.") }
-    public var onDisappear: (() -> Void)? = { assertionFailure("PostDetailsViewStore.onDisappear is not implemented.") }
+    public var onHeaderDisappear: VoidClosure = unimplemented()
+    public var onHeaderAppear: VoidClosure = unimplemented()
+    public var onDisappear: VoidClosure = unimplemented()
     
     public init(
         posterStore: AsyncImageViewStore,
@@ -38,14 +39,14 @@ public final class PostDetailsViewStore {
     }
     
     func handleHeaderDisappear() {
-        onHeaderDisappear?()
+        onHeaderDisappear()
     }
     
     func handleHeaderAppear() {
-        onHeaderAppear?()
+        onHeaderAppear()
     }
     
     func handleDisappear() {
-        onDisappear?()
+        onDisappear()
     }
 }

@@ -45,9 +45,9 @@ public struct HomeFeed: View {
                     )
                     .padding(.horizontal, 10)
                     .padding(.bottom, 10)
-                    .onAppear { store.itemAppeared(item) }
+                    .onAppear { store.handleItemAppeared(item) }
                     .onTapGesture {
-                        store.itemSelected(item)
+                        store.handleItemSelected(item)
                     }
                 }
                 
@@ -69,12 +69,12 @@ public struct HomeFeed: View {
         .background(background)
         .listStyle(.plain)
         .refreshable {
-            await store.refresh()
+            await store.handleRefresh()
         }
         .onAppear {
             UIRefreshControl.appearance().tintColor = UIColor(.accent)
         }
-        .onDisappear(perform: store.disappear)
+        .onDisappear(perform: store.handleOnDisappear)
         .transition(AnyTransition.opacity)
         .animation(.easeInOut, value: store.isLoading)
     }

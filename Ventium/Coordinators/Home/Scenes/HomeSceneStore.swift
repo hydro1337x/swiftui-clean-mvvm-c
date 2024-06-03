@@ -5,9 +5,9 @@
 //  Created by Benjamin Mecanović on 17.03.2023..
 //
 
-import Combine
 import Domain
 import Presentation
+import Core
 import Foundation
 
 @MainActor
@@ -18,9 +18,9 @@ final class HomeSceneStore {
     let topSheetStore: FilterTopSheetStore
     let storyPagerStore: StoryPagerStore
     
-    var onPostTap: ((PostViewModel) -> Void)? = { _ in assertionFailure("HomeSceneStore.onPostTap is not implemented.") }
-    var onStoryTap: ((StoryViewModel) -> Void)? = { _ in assertionFailure("HomeSceneStore.onStoryTap is not implemented.") }
-    var onStoryPagerDismiss: (() -> Void)? = { assertionFailure("HomeSceneStore.onStoryPagerDismiss is not implemented.") } 
+    var onPostTap: InputClosure<PostViewModel> = unimplemented()
+    var onStoryTap: InputClosure<StoryViewModel> = unimplemented()
+    var onStoryPagerDismiss: VoidClosure = unimplemented()
     
     init(
         homeFeedStore: HomeFeedStore,
@@ -41,8 +41,8 @@ final class HomeSceneStore {
             await storyListStore.handleRefresh()
         }
         
-        homeFeedStore.onItemSelection = { [weak self] item in
-            self?.onPostTap?(item)
+        homeFeedStore.onItemSelected = { [weak self] item in
+            self?.onPostTap(item)
         }
         
         storyListStore.onStoriesFetch = { [weak storyPagerStore] items in
@@ -50,16 +50,16 @@ final class HomeSceneStore {
         }
         
         storyListStore.onItemTap = { [weak self] item in
-            self?.onStoryTap?(item)
+            self?.onStoryTap(item)
             self?.storyPagerStore.selectItem(item)
         }
         
         topSheetStore.onFilterChanged = { [homeFeedStore] filter in
-            homeFeedStore.filterChanged(filter)
+            homeFeedStore.handleFilterChanged(filter)
         }
         
         storyPagerStore.onDragEnded = { [weak self] in
-            self?.onStoryPagerDismiss?()
+            self?.onStoryPagerDismiss()
         }
         
         storyPagerStore.onNextItem = { [weak storyPagerStore, weak storyListStore] in

@@ -5,6 +5,7 @@
 //  Created by Benjamin Mecanović on 21.02.2023..
 //
 
+import Core
 import Foundation
 
 @MainActor
@@ -18,9 +19,9 @@ public final class StoryPagerStore {
     }
     private var items: [StoryViewModel] = []
     
-    public var onNextItem: (() -> Void)? = { assertionFailure() }
-    public var onPreviousItem: (() -> Void)? = { assertionFailure() }
-    public var onDragEnded: (() -> Void)? = { assertionFailure() }
+    public var onNextItem: VoidClosure = unimplemented()
+    public var onPreviousItem: VoidClosure = unimplemented()
+    public var onDragEnded: VoidClosure = unimplemented()
     
     public init() {}
     
@@ -38,7 +39,7 @@ public final class StoryPagerStore {
         
         self.selectedIndex = selectedIndex + 1
         
-        onNextItem?()
+        onNextItem()
     }
     
     public func previousItem() {
@@ -46,12 +47,12 @@ public final class StoryPagerStore {
         
         self.selectedIndex = selectedIndex - 1
         
-        onPreviousItem?()
+        onPreviousItem()
     }
     
     public func dragEnded() {
         selectedIndex = nil
-        onDragEnded?()
+        onDragEnded()
     }
     
     private func getItem(for index: Int?) -> StoryViewModel? {

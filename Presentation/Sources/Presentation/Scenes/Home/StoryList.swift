@@ -31,9 +31,9 @@ public struct StoryList: View {
                                 RoundedRectangle(cornerRadius: 10)
                                     .stroke(Color(.accent), lineWidth: 2)
                             )
-                            .onAppear { store.itemAppeared(item) }
+                            .onAppear { store.handleItemAppeared(item) }
                             .onTapGesture {
-                                store.itemTapped(item)
+                                store.handleItemTapped(item)
                             }
                             .id(item)
                         }

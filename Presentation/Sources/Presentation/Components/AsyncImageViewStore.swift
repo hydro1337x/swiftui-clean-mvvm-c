@@ -21,7 +21,7 @@ public final class AsyncImageViewStore {
     
     private(set) var state: State = .initial
     
-    private let fetchImage: () async -> Result<Data, Error>
+    private let fetchImage: OutputAsyncClosure<Result<Data, Error>>
     
     var task: Task<Void, Never>?
     

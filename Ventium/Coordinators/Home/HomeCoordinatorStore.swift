@@ -32,12 +32,12 @@ final class HomeCoordinatorStore {
     private(set) var isNavigationTitleVisible = false
     
     // Maybe create HomeCoordinatorStore.Delegates and put all the closures there
-    var onStoryTap: ((StoryViewModel) -> Void)? = { _ in assertionFailure("HomeCoordinatorStore.onStoryTap is not implemented.") }
-    var onStoryPagerDismiss: (() -> Void)? = { assertionFailure("HomeCoordinatorStore.onStoryPagerDismiss is not implemented.") }
-    var onRightBarButtonTap: (() -> Void)? = { assertionFailure("HomeCoordinatorStore.onRightBarButtonTap is not implemented.") }
-    var onPathIsEmptyChange: ((Bool) -> Void)? = { _ in assertionFailure("HomeCoordinatorStore.onPatchIsEmptyChange is not implemented.") }
-    var onLogoutTap: (() -> Void)? = { assertionFailure("HomeCoordinatorStore.onLogoutTap is not implemented.") }
-    var onSideMenuDismiss: (() -> Void)? = { assertionFailure("HomeCoordinatorStore.onSideMenuDismiss is not implemented.") }
+    var onStoryTap: InputClosure<StoryViewModel> = unimplemented()
+    var onStoryPagerDismiss: VoidClosure = unimplemented()
+    var onRightBarButtonTap: VoidClosure = unimplemented()
+    var onPathIsEmptyChange: InputClosure<Bool> = unimplemented()
+    var onLogoutTap: VoidClosure = unimplemented()
+    var onSideMenuDismiss: VoidClosure = unimplemented()
     
     private let factory: HomeFactory
     
@@ -61,12 +61,12 @@ final class HomeCoordinatorStore {
         
         rootScene.onStoryTap = { [weak self] story in
             self?.setNavigationBarHidden(true)
-            self?.onStoryTap?(story)
+            self?.onStoryTap(story)
         }
         
         rootScene.onStoryPagerDismiss = { [weak self] in
             self?.setNavigationBarHidden(false)
-            self?.onStoryPagerDismiss?()
+            self?.onStoryPagerDismiss()
         }
     }
     
@@ -77,17 +77,17 @@ final class HomeCoordinatorStore {
     func handleRightBarButtonTap() {
         toggleIsSideMenuShown()
         setNavigationBarHidden(true)
-        onRightBarButtonTap?()
+        onRightBarButtonTap()
     }
     
     func handleLogoutTap() {
-        onLogoutTap?()
+        onLogoutTap()
     }
     
     func handleSideMenuDismiss() {
         toggleIsSideMenuShown()
         setNavigationBarHidden(false)
-        onSideMenuDismiss?()
+        onSideMenuDismiss()
     }
     
     private func setNavigationBarBackgroundHidden(_ value: Bool) {
@@ -125,7 +125,7 @@ final class HomeCoordinatorStore {
     }
     
     private func handleEmptyPath() {
-        onPathIsEmptyChange?(path.isEmpty)
+        onPathIsEmptyChange(path.isEmpty)
     }
     
     private func setNavigationBarHidden(_ value: Bool) {
